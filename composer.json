@@ -1,0 +1,33 @@
+{
+    "name": "mayifit/core-translation",
+    "description": "Core translation system for Laravel based MayIFit systems",
+    "keywords": ["permission", "laravel", "php", "roles", "management"],
+    "type": "project",
+    "authors": [
+        {
+            "name": "MayIFit",
+            "email": "contact@mayifit.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MayIFit\\Core\\Translation\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.2",
+        "spatie/laravel-translation-loader": "^2.4"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MayIFit\\Core\\Translation\\TranslationServiceProvider"
+            ],
+            "aliases": {
+                "LanguageLine": "MayIFit\\Core\\Translation\\Facades\\LanguageLine"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
