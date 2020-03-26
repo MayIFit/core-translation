@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['middleware' => ['api', 'auth:api', 'mayifit/core-permission'], 'prefix' => 'api/v1'], function () {
-    Route::namespace('MayIFit\Core\Translation\Http\Controllers\API')->prefix('admin/translation')->name('api.admin.')->group(function() { 
+    Route::namespace('MayIFit\Core\Translation\Http\Controllers\API')->prefix('admin')->name('api.admin.')->group(function() { 
         Route::apiResource('translation', 'TranslationController@', ['except' => ['create', 'edit', 'destroy']]);
     });
 });
