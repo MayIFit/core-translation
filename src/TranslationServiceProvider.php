@@ -44,16 +44,6 @@
             $this->app->bind('translation', function () {
                 return new Translation();
             });
-            $this->app->bindShared(
-                "migrator",
-                function () {
-                    return new Migrator(
-                        $this->app->make("migration.repository"),
-                        $this->app->make("db"),
-                        $this->app->make("files")
-                 );
-                }
-            );
         }
 
         /**
