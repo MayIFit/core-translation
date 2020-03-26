@@ -19,7 +19,7 @@
         "laravel/framework": "^7.0",
         "spatie/laravel-translation-loader": "^2.4",
         "laravel/helpers": "^1.2",
-        "mayifit/core-permission": "^1.0"
+        "mayifit/core-permission": "dev-master"
     },
     "extra": {
         "laravel": {
