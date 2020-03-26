@@ -8,8 +8,9 @@
     use Illuminate\Support\ServiceProvider;
     use Symfony\Component\Console\Output\ConsoleOutput;
 
-    use MayIFit\Core\Permission\Models\Permission; 
-    use MayIFit\Core\Permission\Policies\PermissionPolicy; 
+    use MayIFit\Core\Translation\Migrator;
+    use MayIFit\Core\Translation\Models\Translation; 
+    use MayIFit\Core\Translation\Policies\TranslationPolicy; 
 
     class TranslationServiceProvider extends ServiceProvider {
 
@@ -43,6 +44,16 @@
             $this->app->bind('translation', function () {
                 return new Translation();
             });
+            $this->app->bindShared(
+                "migrator",
+                function () {
+                    return new Migrator(
+                        $this->app->make("migration.repository"),
+                        $this->app->make("db"),
+                        $this->app->make("files")
+                 );
+                }
+            );
         }
 
         /**
