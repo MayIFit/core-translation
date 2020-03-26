@@ -19,12 +19,12 @@ class TranslationController extends Controller
     public function index(Request $request)
     {
         if ($request->name) {
-            $translations = LanguageLine::where('group', 'LIKE', '%'.$request->name.'%')
+            $translations = Translation::where('group', 'LIKE', '%'.$request->name.'%')
                 ->orWhere('key', 'LIKE', '%'.$request->name.'%')
                 ->orWhere('text', 'LIKE', '%'.$request->name.'%')
                 ->paginate(15);
         } else {
-            $translations = LanguageLine::paginate(15);
+            $translations = Translation::paginate(15);
         }
         return new TranslationCollection($translations);
     }
@@ -47,32 +47,32 @@ class TranslationController extends Controller
      */
     public function store(Request $request)
     {
-        $languageLine = new LanguageLine();
-        $languageLine->text = [$request->language => $request->value];
-        $languageLine->group = $request->group;
-        $languageLine->key = $request->key;
-        $languageLine->save();
-        return new TranslationCollection($languageLine);
+        $translation = new Translation();
+        $translation->text = [$request->language => $request->value];
+        $translation->group = $request->group;
+        $translation->key = $request->key;
+        $translation->save();
+        return new TranslationCollection($translation);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\LanguageLine  $languageLine
+     * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return \Illuminate\Http\Response
      */
-    public function show(LanguageLine $languageLine)
+    public function show(Translation $translation)
     {
-        return new TranslationCollection($languageLine);
+        return new TranslationCollection($translation);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\LanguageLine  $languageLine
+     * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return \Illuminate\Http\Response
      */
-    public function edit(LanguageLine $languageLine)
+    public function edit(Translation $translation)
     {
         return false;
     }
@@ -81,10 +81,10 @@ class TranslationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\LanguageLine  $languageLine
+     * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, LanguageLine $languageLine)
+    public function update(Request $request, Translation $translation)
     {
         $lineText = array();
         foreach ($request->language as $key => $value) {
@@ -93,22 +93,22 @@ class TranslationController extends Controller
             }
         }
         
-        $languageLine->text = $lineText;
-        $languageLine->group = $request->group;
-        $languageLine->key = $request->key;
-        $languageLine->save();
-        return new TranslationCollection($languageLine);
+        $translation->text = $lineText;
+        $translation->group = $request->group;
+        $translation->key = $request->key;
+        $translation->save();
+        return new TranslationCollection($translation);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\LanguageLine  $languageLine
+     * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LanguageLine $languageLine)
+    public function destroy(Translation $translation)
     {
-        $languageLine->delete();
-        return new TranslationCollection($languageLine);
+        $translation->delete();
+        return new TranslationCollection($translation);
     }
 }

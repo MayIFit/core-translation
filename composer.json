@@ -18,7 +18,8 @@
         "php": "^7.2",
         "laravel/framework": "^7.0",
         "spatie/laravel-translation-loader": "^2.4",
-        "laravel/helpers": "^1.2"
+        "laravel/helpers": "^1.2",
+        "mayifit/core-permission": "^1.0"
     },
     "extra": {
         "laravel": {
