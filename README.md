@@ -8,8 +8,10 @@ The purpose of this package is to have an identical translation system accross a
 
 ## Folders
 
-- `src/Database/Migrations` - Contains all the required migration files for this package
+- `src/Database/migrations` - Contains all the required migration files for this package
+- `src/Database/seeds` - Contains all the seeder files for this package
 - `src/Http/Controllers` - Contains all the controllers
-- `src/Http/Models` - Contains all the Eloquen models
-- `src/Http/Policies` - Contains all the Eloquen model policies
-- `src/Http/Traits` - Contains all the Eloquen model traits
+- `src/Http/Resources` - Contains all the API response resources
+- `src/Models` - Contains all the Eloquent models
+- `src/Policies` - Contains all the Eloquent model policies
+- `src/Facedes` - Contains all the Eloquent model facades
