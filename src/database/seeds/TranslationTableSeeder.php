@@ -5,7 +5,12 @@ namespace MayIFit\Core\Translation\Database\Seeds;
 use Illuminate\Database\Seeder;
 use MayIFit\Core\Translation\Models\Translation;
 
-class TranslationsTableSeeder extends Seeder
+/**
+ * Class TranslationsTableSeeder
+ *
+ * @package MayIFit\Core\Translation
+ */
+class TranslationTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

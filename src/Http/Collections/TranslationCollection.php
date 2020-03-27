@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Resources;
+namespace MayIFit\Core\Translation\Http\Collections;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
+use MayIFit\Core\Translation\Http\Resources\TranslationResource;
 use MayIFit\Core\Translation\Models\Translation;
 
 class TranslationCollection extends ResourceCollection
@@ -16,8 +17,8 @@ class TranslationCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        $this->collection->transform(function (User $user) {
-            return (new TranslationResource($user));
+        $this->collection->transform(function (Translation $translation) {
+            return (new TranslationResource($translation));
         });
 
         return parent::toArray($request);

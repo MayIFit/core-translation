@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use MayIFit\Core\Translation\Models\Translation;
-use MayIFit\Core\Translation\Http\Resources\TranslationCollection;
+use MayIFit\Core\Translation\Http\Collections\TranslationCollection;
 
 class TranslationController extends Controller
 {
@@ -18,14 +18,12 @@ class TranslationController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->name) {
-            $translations = Translation::where('group', 'LIKE', '%'.$request->name.'%')
-                ->orWhere('key', 'LIKE', '%'.$request->name.'%')
-                ->orWhere('text', 'LIKE', '%'.$request->name.'%')
-                ->paginate(15);
-        } else {
-            $translations = Translation::paginate(15);
-        }
+        $searchTerm = $request->input('name');
+        $translations = Translation::when($searchTerm, function($q) use ($searchTerm) {
+            $q->where('group', 'LIKE', '%'.$searchTerm.'%')
+                ->orWhere('key', 'LIKE', '%'.$searchTerm.'%')
+                ->orWhere('text', 'LIKE', '%'.$searchTerm.'%');
+        })->paginate(15);
         return new TranslationCollection($translations);
     }
 
