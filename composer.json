@@ -30,7 +30,7 @@
                 "MayIFit\\Core\\Translation\\TranslationServiceProvider"
             ],
             "aliases": {
-                "LanguageLine": "MayIFit\\Core\\Translation\\Facades\\LanguageLine"
+                "Translation": "MayIFit\\Core\\Translation\\Facades\\Translation"
             }
         }
     },
