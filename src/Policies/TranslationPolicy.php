@@ -42,7 +42,7 @@ class TranslationPolicy
      */
     public function create(User $user)
     {
-        return $user->hasPermission('admin.translation.view-create-screen');
+        return $user->hasPermission('admin.translation.create');
     }
 
     /**
@@ -54,7 +54,7 @@ class TranslationPolicy
      */
     public function update(User $user, Translation $translation)
     {
-        return $user->hasPermission('admin.translation.view-edit-screen');
+        return $user->hasPermission('admin.translation.update');
 
     }
 
