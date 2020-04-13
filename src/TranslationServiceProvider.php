@@ -37,6 +37,9 @@
                     $this->addSeedsAfterConsoleCommandFinished();
                 }
             }
+            $this->publishes([
+                __DIR__.'/graphql' => './graphql',
+            ], '/');
         }
 
         public function register() {

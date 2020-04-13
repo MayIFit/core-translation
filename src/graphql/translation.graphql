@@ -1,0 +1,17 @@
+extend type Query {
+    translations(
+        key: String @eq 
+        group: String @eq
+    ): [Translation!]! @all
+
+    translation(
+        key: String! @eq 
+        group: String! @eq
+    ): Translation! @all
+}
+
+type Translation @modelClass(class: "\\MayIFit\\Core\\Translation\\Models\\Translation") {
+    key: String!
+    group: String!
+    text: ObjectScalar
+}

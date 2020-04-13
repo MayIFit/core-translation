@@ -25,7 +25,7 @@ class TranslationTableSeeder extends Seeder
             $this->addUserAttributeTranslations();
             $this->addDateRelatedTranslations();
             $this->addEntityEventTranslations();
-            $this->addStatusTranslations();
+            $this->addStateTranslations();
             $this->actionTranslations();
             $this->errorTranslations();
         }
@@ -106,6 +106,16 @@ class TranslationTableSeeder extends Seeder
             'group' => 'global',
             'key' => 'filters',
             'text' => ['en' => 'Filters', 'hu' => 'Szűrők'],
+        ]);
+        Translation::create([
+            'group' => 'global',
+            'key' => 'system',
+            'text' => ['en' => 'System', 'hu' => 'Rendszer'],
+        ]);
+        Translation::create([
+            'group' => 'global',
+            'key' => 'settings',
+            'text' => ['en' => 'Settings', 'hu' => 'Beállítások'],
         ]);
     }
 
@@ -281,39 +291,39 @@ class TranslationTableSeeder extends Seeder
         ]);
     }
 
-    protected function addStatusTranslations() {
+    protected function addStateTranslations() {
         Translation::create([
-            'group' => 'status',
-            'key' => 'status',
-            'text' => ['en' => 'Status', 'hu' => 'Státusz'],
+            'group' => 'state',
+            'key' => 'state',
+            'text' => ['en' => 'state', 'hu' => 'Státusz'],
         ]);
         Translation::create([
-            'group' => 'status',
+            'group' => 'state',
             'key' => 'pending',
             'text' => ['en' => 'Pending', 'hu' => 'Elfogadásra vár'],
         ]);
         Translation::create([
-            'group' => 'status',
+            'group' => 'state',
             'key' => 'permitted',
             'text' => ['en' => 'Permitted', 'hu' => 'Engedélyezve'],
         ]);
         Translation::create([
-            'group' => 'status',
+            'group' => 'state',
             'key' => 'active',
             'text' => ['en' => 'Active', 'hu' => 'Aktív'],
         ]);
         Translation::create([
-            'group' => 'status',
+            'group' => 'state',
             'key' => 'inactive',
             'text' => ['en' => 'Inactive', 'hu' => 'Inaktív'],
         ]);
         Translation::create([
-            'group' => 'status',
+            'group' => 'state',
             'key' => 'disabled',
             'text' => ['en' => 'Disabled', 'hu' => 'Kikapcsolva'],
         ]);
         Translation::create([
-            'group' => 'status',
+            'group' => 'state',
             'key' => 'enabled',
             'text' => ['en' => 'Enabled', 'hu' => 'Bekapcsolva'],
         ]);
@@ -322,8 +332,8 @@ class TranslationTableSeeder extends Seeder
     protected function actionTranslations() {
         Translation::create([
             'group' => 'action',
-            'key' => 'action',
-            'text' => ['en' => 'Action', 'hu' => 'Kezelés'],
+            'key' => 'actions',
+            'text' => ['en' => 'Actions', 'hu' => 'Kezelés'],
         ]);
         Translation::create([
             'group' => 'action',
