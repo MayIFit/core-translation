@@ -11,7 +11,11 @@
     ],
     "autoload": {
         "psr-4": {
-            "MayIFit\\Core\\Translation\\": "src/"
+            "MayIFit\\Core\\Translation\\": "src/",
+            "MayIFit\\Core\\Translation\\Database\\Seeds\\": "src/Database/Seeds/",
+            "MayIFit\\Core\\Translation\\Facades\\": "src/Facades/",
+            "MayIFit\\Core\\Translation\\Models\\": "src/Models/",
+            "MayIFit\\Core\\Translation\\Policies\\": "src/Policies/"
         }
     },
     "require": {

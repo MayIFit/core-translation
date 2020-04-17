@@ -21,7 +21,6 @@ class TranslationTableSeeder extends Seeder
     {
         if (Translation::count() == 0) {
             $this->addGeneralTranslations();
-            $this->addGlobalEvenTranslations();
             $this->addUserAttributeTranslations();
             $this->addDateRelatedTranslations();
             $this->addEntityEventTranslations();
@@ -117,48 +116,25 @@ class TranslationTableSeeder extends Seeder
             'key' => 'settings',
             'text' => ['en' => 'Settings', 'hu' => 'Beállítások'],
         ]);
-    }
-
-    protected function addGlobalEvenTranslations() {
         Translation::create([
             'group' => 'global',
-            'key' => 'add_new',
-            'text' => ['en' => 'Add new', 'hu' => 'Új érték hozzáadása'],
+            'key' => 'breadcrumbs',
+            'text' => ['en' => 'Breadcrumbs', 'hu' => 'Morzsák'],
         ]);
         Translation::create([
             'group' => 'global',
-            'key' => 'create',
-            'text' => ['en' => 'Create new', 'hu' => 'Új létrehozása'],
+            'key' => 'has_right',
+            'text' => ['en' => 'Has Right', 'hu' => 'Jogosult'],
         ]);
         Translation::create([
             'group' => 'global',
-            'key' => 'delete',
-            'text' => ['en' => 'Delete', 'hu' => 'Törlés'],
+            'key' => 'list_view',
+            'text' => ['en' => 'List View', 'hu' => 'Lista Nézet'],
         ]);
         Translation::create([
             'group' => 'global',
-            'key' => 'update',
-            'text' => ['en' => 'Update', 'hu' => 'Módosítás'],
-        ]);
-        Translation::create([
-            'group' => 'global',
-            'key' => 'view',
-            'text' => ['en' => 'View', 'hu' => 'Megtekintés'],
-        ]);
-        Translation::create([
-            'group' => 'global',
-            'key' => 'list',
-            'text' => ['en' => 'List', 'hu' => 'Listázás'],
-        ]);
-        Translation::create([
-            'group' => 'global',
-            'key' => 'logout',
-            'text' => ['en' => 'Logout', 'hu' => 'Kijelentkezés'],
-        ]);
-        Translation::create([
-            'group' => 'global',
-            'key' => 'login',
-            'text' => ['en' => 'Login', 'hu' => 'Bejelentkezés'],
+            'key' => 'board_view',
+            'text' => ['en' => 'Board View', 'hu' => 'Tábla Nézet'],
         ]);
     }
 
@@ -364,6 +340,71 @@ class TranslationTableSeeder extends Seeder
             'group' => 'action',
             'key' => 'confirm_delete',
             'text' => ['en' => 'Confirm delete', 'hu' => 'Törlés megerősítése'],
+        ]);
+        Translation::create([
+            'group' => 'action',
+            'key' => 'save',
+            'text' => ['en' => 'Save', 'hu' => 'Mentés'],
+        ]);
+        Translation::create([
+            'group' => 'action',
+            'key' => 'cancel',
+            'text' => ['en' => 'Cancel', 'hu' => 'Mégse'],
+        ]);
+        Translation::create([
+            'group' => 'action',
+            'key' => 'back',
+            'text' => ['en' => 'Back', 'hu' => 'Vissza'],
+        ]);
+        Translation::create([
+            'group' => 'action',
+            'key' => 'next',
+            'text' => ['en' => 'Next', 'hu' => 'Következő'],
+        ]);
+        Translation::create([
+            'group' => 'action',
+            'key' => 'previous',
+            'text' => ['en' => 'Previous', 'hu' => 'Előző'],
+        ]);
+        Translation::create([
+            'group' => 'action',
+            'key' => 'add_new',
+            'text' => ['en' => 'Add new', 'hu' => 'Új érték hozzáadása'],
+        ]);
+        Translation::create([
+            'group' => 'action',
+            'key' => 'create',
+            'text' => ['en' => 'Create new', 'hu' => 'Új létrehozása'],
+        ]);
+        Translation::create([
+            'group' => 'action',
+            'key' => 'delete',
+            'text' => ['en' => 'Delete', 'hu' => 'Törlés'],
+        ]);
+        Translation::create([
+            'group' => 'action',
+            'key' => 'edit',
+            'text' => ['en' => 'Edit', 'hu' => 'Szerkesztés'],
+        ]);
+        Translation::create([
+            'group' => 'action',
+            'key' => 'view',
+            'text' => ['en' => 'View', 'hu' => 'Megtekintés'],
+        ]);
+        Translation::create([
+            'group' => 'action',
+            'key' => 'list',
+            'text' => ['en' => 'List', 'hu' => 'Listázás'],
+        ]);
+        Translation::create([
+            'group' => 'action',
+            'key' => 'logout',
+            'text' => ['en' => 'Logout', 'hu' => 'Kijelentkezés'],
+        ]);
+        Translation::create([
+            'group' => 'action',
+            'key' => 'login',
+            'text' => ['en' => 'Login', 'hu' => 'Bejelentkezés'],
         ]);
     }
 
