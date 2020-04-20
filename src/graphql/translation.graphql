@@ -4,7 +4,7 @@ extend type Query {
     listTranslation(
         key: String @eq 
         group: String @eq
-    ): [Translation!]! @paginate(type: "paginator") @can(ability: "index" find: "id") @cache
+    ): [Translation!]! @paginate(type: "paginator") @can(ability: "index") @cache
 
     viewTranslation(
         id: ID! @eq
