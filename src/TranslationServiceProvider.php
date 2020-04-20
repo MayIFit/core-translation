@@ -5,7 +5,7 @@
     use Illuminate\Support\Facades\Artisan;
     use Illuminate\Support\Facades\Event;
     use Illuminate\Support\Facades\Request;
-    use Illuminate\Support\ServiceProvider;
+    use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
     use Symfony\Component\Console\Output\ConsoleOutput;
 
     use MayIFit\Core\Translation\Migrator;
@@ -40,6 +40,7 @@
             $this->publishes([
                 __DIR__.'/graphql' => './graphql',
             ], '/');
+            $this->registerPolicies();
         }
 
         public function register() {
