@@ -4,15 +4,30 @@ extend type Query {
     listTranslation(
         key: String @eq 
         group: String @eq
-    ): [Translation!]! @paginate(type: "paginator") @can(ability: "index") @cache
+    ): [Translation!]! 
+        @can(ability: "viewAny" model: "MayIFit\\Core\\Translation\\Models\\Translation") 
+        @paginate(type: "paginator")
 
     viewTranslation(
         id: ID! @eq
-    ): Translation! @can(ability: "view" find: "id") @find
+    ): Translation! 
+        @can(ability: "view" find: "id") 
+        @find
 
-    updateTranslation(input: UpdateTranslationInput! @spread): Translation @can(ability: "update" find: "id") @update
-    createTranslation(input: CreateTranslationInput! @spread): Translation @can(ability: "create") @create
-    deleteTranslation(id: ID! @rules(apply: ["required"])): Translation @can(ability: "delete" find: "id") @delete
+}
+
+extend type Mutation @guard(with: ["sanctum"]) {
+    updateTranslation(input: UpdateTranslationInput! @spread): Translation 
+        @can(ability: "update" find: "id") 
+        @update
+
+    createTranslation(input: CreateTranslationInput! @spread): Translation 
+        @can(ability: "create" model: "MayIFit\\Core\\Translation\\Models\\Translation") 
+        @create
+
+    deleteTranslation(id: ID! @rules(apply: ["required"])): Translation 
+        @can(ability: "delete" find: "id") 
+        @delete
 }
 
 type Translation @modelClass(class: "\\MayIFit\\Core\\Translation\\Models\\Translation") {
