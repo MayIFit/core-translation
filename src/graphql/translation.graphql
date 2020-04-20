@@ -8,7 +8,7 @@ extend type Query {
 
     viewTranslation(
         id: ID! @eq
-    ): Translation! Translation @can(ability: "view" find: "id") @find
+    ): Translation! @can(ability: "view" find: "id") @find
 
     updateTranslation(input: UpdateTranslationInput! @spread): Translation @can(ability: "update" find: "id") @update
     createTranslation(input: CreateTranslationInput! @spread): Translation @can(ability: "create") @create
