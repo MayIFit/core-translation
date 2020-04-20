@@ -4,15 +4,15 @@ extend type Query {
     listTranslation(
         key: String @eq 
         group: String @eq
-    ): [Translation!]! @paginate(type: "paginator") @cache
+    ): [Translation!]! @paginate(type: "paginator") @can(ability: "index" find: "id") @cache
 
     viewTranslation(
         id: ID! @eq
-    ): Translation! @find
+    ): Translation! Translation @can(ability: "view" find: "id") @find
 
-    updateTranslation(input: UpdateTranslationInput! @spread): Translation @update
-    createTranslation(input: CreateTranslationInput! @spread): Translation @create
-    deleteTranslation(id: ID! @rules(apply: ["required"])): Translation @delete
+    updateTranslation(input: UpdateTranslationInput! @spread): Translation @can(ability: "update" find: "id") @update
+    createTranslation(input: CreateTranslationInput! @spread): Translation @can(ability: "create") @create
+    deleteTranslation(id: ID! @rules(apply: ["required"])): Translation @can(ability: "delete" find: "id") @delete
 }
 
 type Translation @modelClass(class: "\\MayIFit\\Core\\Translation\\Models\\Translation") {
