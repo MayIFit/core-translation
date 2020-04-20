@@ -1,17 +1,39 @@
 extend type Query {
-    translations(
+    allTranslation: [Translation!]! @all @cache
+
+    listTranslation(
         key: String @eq 
         group: String @eq
-    ): [Translation!]! @all
+    ): [Translation!]! @paginate(type: "paginator") @cache
 
-    translation(
-        key: String! @eq 
-        group: String! @eq
-    ): Translation! @all
+    viewTranslation(
+        id: ID! @eq
+    ): Translation! @find
+
+    updateTranslation(input: UpdateTranslationInput! @spread): Translation @update
+    createTranslation(input: CreateTranslationInput! @spread): Translation @create
+    deleteTranslation(id: ID! @rules(apply: ["required"])): Translation @delete
 }
 
 type Translation @modelClass(class: "\\MayIFit\\Core\\Translation\\Models\\Translation") {
+    id: ID!
     key: String!
     group: String!
     text: ObjectScalar
+}
+
+input UpdateTranslationInput {
+    id: ID!
+    group: String!
+    key: String!
+    text: ObjectScalar
+    __typename: String
+}
+
+input CreateTranslationInput {
+    id: ID!
+    group: String!
+    key: String!
+    text: ObjectScalar
+    __typename: String
 }
