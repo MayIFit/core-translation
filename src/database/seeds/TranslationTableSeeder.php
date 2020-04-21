@@ -136,6 +136,16 @@ class TranslationTableSeeder extends Seeder
             'key' => 'board_view',
             'text' => ['en' => 'Board View', 'hu' => 'Tábla Nézet'],
         ]);
+        Translation::create([
+            'group' => 'global',
+            'key' => 'system_settings',
+            'text' => ['en' => 'System Settings', 'hu' => 'Rendszer Beállítások'],
+        ]);
+        Translation::create([
+            'group' => 'global',
+            'key' => 'entity',
+            'text' => ['en' => 'Entity', 'hu' => 'Elem'],
+        ]);
     }
 
     protected function addUserAttributeTranslations() {
