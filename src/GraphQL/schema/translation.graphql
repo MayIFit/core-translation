@@ -17,7 +17,7 @@ extend type Query {
 
 extend type Mutation @guard(with: ["sanctum"]) {
     updateTranslation(input: UpdateTranslationInput! @spread): Translation 
-        @can(ability: "update" find: "id") 
+        @can(ability: "update" find: "id" model: "MayIFit\\Core\\Translation\\Models\\Translation") 
         @update
 
     createTranslation(input: CreateTranslationInput! @spread): Translation 
@@ -51,7 +51,6 @@ input UpdateTranslationInput {
 }
 
 input CreateTranslationInput {
-    id: ID!
     group: String!
     key: String!
     text: ObjectScalar
