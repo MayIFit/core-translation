@@ -38,7 +38,13 @@
                 }
             }
             $this->publishes([
-                __DIR__.'/graphql' => './graphql',
+                __DIR__.'/GraphQL/schema' => './graphql',
+            ], '/');
+            $this->publishes([
+                __DIR__.'/GraphQL/Scalars' => './App/GraphQL/Scalars',
+            ], '/');
+            $this->publishes([
+                __DIR__.'/GraphQL/Queries' => './App/GraphQL/Queries',
             ], '/');
             $this->registerPolicies();
         }

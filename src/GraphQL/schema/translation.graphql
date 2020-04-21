@@ -1,18 +1,17 @@
 extend type Query {
     allTranslation: [Translation!]! @all @cache
+    allLanguages: [Language!]! @cache
 
     listTranslation(
         key: String @eq 
         group: String @eq
     ): [Translation!]! 
-        @can(ability: "viewAny" model: "MayIFit\\Core\\Translation\\Models\\Translation") 
-        @paginate(type: "paginator")
+    @can(ability: "viewAny" model: "MayIFit\\Core\\Translation\\Models\\Translation") 
+    @paginate(type: "paginator")
 
     viewTranslation(
         id: ID! @eq
-    ): Translation! 
-        @can(ability: "view" find: "id") 
-        @find
+    ): Translation! @can(ability: "view" find: "id") @find
 
 }
 
@@ -35,6 +34,12 @@ type Translation @modelClass(class: "\\MayIFit\\Core\\Translation\\Models\\Trans
     key: String!
     group: String!
     text: ObjectScalar
+}
+
+type Language {
+    id: ID!
+    language: String! @rename(attribute: "ISO6391")
+    name: String
 }
 
 input UpdateTranslationInput {
