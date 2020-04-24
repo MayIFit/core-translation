@@ -8,7 +8,6 @@
     use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
     use Symfony\Component\Console\Output\ConsoleOutput;
 
-    use MayIFit\Core\Translation\Migrator;
     use MayIFit\Core\Translation\Models\Translation; 
     use MayIFit\Core\Translation\Policies\TranslationPolicy; 
 

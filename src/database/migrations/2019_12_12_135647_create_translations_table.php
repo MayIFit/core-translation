@@ -13,12 +13,13 @@ class CreateTranslationsTable extends Migration
     public function up()
     {
         Schema::create('language_lines', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('group');
             $table->index('group');
             $table->string('key');
             $table->text('text');
             $table->timestamps();
+            $table->unique(['group', 'key'], 'composite_index');
         });
     }
 

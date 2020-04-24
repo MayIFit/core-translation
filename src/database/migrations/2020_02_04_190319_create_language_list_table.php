@@ -14,7 +14,7 @@ class CreateLanguageListTable extends Migration
     public function up()
     {
         Schema::create('language_list', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('ISO6391');
             $table->string('name');
             $table->timestamps();
