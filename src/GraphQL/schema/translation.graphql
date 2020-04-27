@@ -17,7 +17,7 @@ extend type Query {
 
 extend type Mutation @guard(with: ["sanctum"]) {
     updateTranslation(input: UpdateTranslationInput! @spread): Translation 
-        @can(ability: "update" find: "id" model: "MayIFit\\Core\\Translation\\Models\\Translation") 
+        @can(ability: "update" find: "id") 
         @update
 
     createTranslation(input: CreateTranslationInput! @spread): Translation 
@@ -29,10 +29,16 @@ extend type Mutation @guard(with: ["sanctum"]) {
         @delete
 }
 
-type Translation @modelClass(class: "\\MayIFit\\Core\\Translation\\Models\\Translation") {
+input UpdateTranslationInput {
     id: ID!
-    key: String!
     group: String!
+    key: String!
+    text: ObjectScalar
+}
+
+input CreateTranslationInput {
+    group: String!
+    key: String!
     text: ObjectScalar
 }
 
@@ -42,17 +48,9 @@ type Language {
     name: String
 }
 
-input UpdateTranslationInput {
+type Translation @modelClass(class: "\\MayIFit\\Core\\Translation\\Models\\Translation") {
     id: ID!
-    group: String!
     key: String!
-    text: ObjectScalar
-    __typename: String
-}
-
-input CreateTranslationInput {
     group: String!
-    key: String!
     text: ObjectScalar
-    __typename: String
 }
