@@ -1,14 +1,14 @@
 <?php
 
-namespace App\GraphQL\Queries;
+namespace App\GraphQL\Queries\Core\Translation;
 
 use GraphQL\Type\Definition\ResolveInfo;
 use Nuwave\Lighthouse\Support\Contracts\GraphQLContext;
 use Illuminate\Support\Facades\DB;
 
-class allLanguages
+class AllLanguages
 {
-    public function resolve($rootValue,array $args, GraphQLContext $context, ResolveInfo $resolveInfo) {
+    public function __invoke($rootValue,array $args, GraphQLContext $context, ResolveInfo $resolveInfo) {
         $languages = DB::table('language_list')->get();
         return $languages;
     }
