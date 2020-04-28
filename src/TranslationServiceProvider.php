@@ -37,13 +37,13 @@
                 }
             }
             $this->publishes([
-                __DIR__.'/GraphQL/schema' => './graphql/core/core_translation',
+                __DIR__.'/GraphQL/schema' => './graphql/core',
             ], '/');
             $this->publishes([
-                __DIR__.'/GraphQL/Scalars' => './App/GraphQL/Scalars/Core/Translation',
+                __DIR__.'/GraphQL/Scalars' => './App/GraphQL/Scalars/Extensions',
             ], '/');
             $this->publishes([
-                __DIR__.'/GraphQL/Queries' => './App/GraphQL/Queries/Core/Translation',
+                __DIR__.'/GraphQL/Queries' => './App/GraphQL/Queries/Extensions',
             ], '/');
             $this->registerPolicies();
         }
