@@ -12,7 +12,6 @@ extend type Query {
     viewTranslation(
         id: ID! @eq
     ): Translation! @can(ability: "view" find: "id") @find
-
 }
 
 extend type Mutation @guard(with: ["sanctum"]) {
