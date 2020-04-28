@@ -40,10 +40,10 @@
                 __DIR__.'/GraphQL/schema' => './graphql/core',
             ], '/');
             $this->publishes([
-                __DIR__.'/GraphQL/Scalars' => './App/GraphQL/Scalars/Extensions',
+                __DIR__.'/GraphQL/Scalars' => './app/GraphQL/Scalars/Extensions',
             ], '/');
             $this->publishes([
-                __DIR__.'/GraphQL/Queries' => './App/GraphQL/Queries/Extensions',
+                __DIR__.'/GraphQL/Queries' => './app/GraphQL/Queries/Extensions',
             ], '/');
             $this->registerPolicies();
         }
