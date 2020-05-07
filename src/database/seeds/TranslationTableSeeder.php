@@ -19,15 +19,13 @@ class TranslationTableSeeder extends Seeder
      */
     public function run()
     {
-        if (Translation::count() == 0) {
-            $this->addGeneralTranslations();
-            $this->addUserAttributeTranslations();
-            $this->addDateRelatedTranslations();
-            $this->addEntityEventTranslations();
-            $this->addStateTranslations();
-            $this->actionTranslations();
-            $this->errorTranslations();
-        }
+        $this->addGeneralTranslations();
+        $this->addUserAttributeTranslations();
+        $this->addDateRelatedTranslations();
+        $this->addEntityEventTranslations();
+        $this->addStateTranslations();
+        $this->actionTranslations();
+        $this->errorTranslations();
     }
 
     protected function addGeneralTranslations() {
