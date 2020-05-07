@@ -154,7 +154,13 @@ class TranslationTableSeeder extends Seeder
 	            'key' => 'home'
 			],
             ['text' => ['en' => 'Home', 'hu' => 'Nyitólap']],
-		);
+        );
+        Translation::updateOrCreate([
+            'group' => 'global',
+            'key' => 'forgot_password'
+        ],
+        ['text' => ['en' => 'Forgot Password', 'hu' => 'Elfelejtett Jelszó']],
+    );
     }
 
     protected function addUserAttributeTranslations() {
@@ -481,7 +487,13 @@ class TranslationTableSeeder extends Seeder
 	            'key' => 'login'
 			],
             ['text' => ['en' => 'Login', 'hu' => 'Bejelentkezés']],
-		);
+        );
+        Translation::updateOrCreate([
+            'group' => 'action',
+            'key' => 'register'
+        ],
+        ['text' => ['en' => 'Register', 'hu' => 'Regisztráció']],
+    );
     }
 
     protected function errorTranslations() {
