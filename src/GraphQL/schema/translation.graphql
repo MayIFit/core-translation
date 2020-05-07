@@ -2,7 +2,7 @@
 scalar ObjectScalar @scalar(class: "App\\GraphQL\\Scalars\\Extensions\\ObjectScalar")
 
 extend type Query {
-    allTranslation: [Translation!]! @all @cache
+    allTranslation: [Translation!]! @all
     allLanguages: [Language!]! @cache
 
     listTranslation(
