@@ -156,11 +156,17 @@ class TranslationTableSeeder extends Seeder
             ['text' => ['en' => 'Home', 'hu' => 'Nyitólap']],
         );
         Translation::updateOrCreate([
-            'group' => 'global',
-            'key' => 'forgot_password'
-        ],
-        ['text' => ['en' => 'Forgot Password', 'hu' => 'Elfelejtett Jelszó']],
-    );
+				'group' => 'global',
+				'key' => 'forgot_password'
+			],
+			['text' => ['en' => 'Forgot Password', 'hu' => 'Elfelejtett Jelszó']],
+    	);
+		Translation::updateOrCreate([
+				'group' => 'global',
+				'key' => 'small_letters_without_accents_and_underscores_only'
+			],
+			['text' => ['en' => 'Small letter without accents and underscores for whitespaces', 'hu' => 'Kis betűk ékezet nélkül, szóköz helyett aláhúzásokkal']],
+		);
     }
 
     protected function addUserAttributeTranslations() {
