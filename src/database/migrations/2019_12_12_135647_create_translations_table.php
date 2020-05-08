@@ -18,6 +18,8 @@ class CreateTranslationsTable extends Migration
             $table->index('group');
             $table->string('key');
             $table->text('text');
+            $table->unsignedBigInteger('created_by')->references('id')->on('users');
+            $table->unsignedBigInteger('updated_by')->references('id')->on('users')->nullable();
             $table->timestamps();
             $table->unique(['group', 'key'], 'composite_index');
         });
