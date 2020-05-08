@@ -18,7 +18,7 @@ class Translation extends LanguageLine
     }
 
     public function save(array $options = array()) {
-        $this->created_by = auth()->id();
+        $this->created_by = auth()->id() ?? 1;
         $this->updated_by = auth()->id();
         parent::save($options);
     }
