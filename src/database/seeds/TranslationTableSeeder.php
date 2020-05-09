@@ -179,6 +179,12 @@ class TranslationTableSeeder extends Seeder
 			],
 			['text' => ['en' => 'Files', 'hu' => 'Fájlok']],
 		);
+		Translation::updateOrCreate([
+				'group' => 'global',
+				'key' => 'documents'
+			],
+			['text' => ['en' => 'Documents', 'hu' => 'Dokumentumok']],
+		);
     }
 
     protected function addUserAttributeTranslations() {
