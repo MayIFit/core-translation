@@ -27,7 +27,7 @@
          *
          * @var array
          */
-        protected $database_folder = '/database';
+        protected $database_folder = '/Database';
 
         public function boot() {
             $this->loadMigrationsFrom(__DIR__.$this->database_folder.'/migrations');
@@ -82,7 +82,7 @@
                 // Accept command in console only,
                 // exclude all commands from Artisan::call() method.
                 if ($event->output instanceof ConsoleOutput) {
-                    $this->addSeedsFrom(__DIR__ . $this->database_folder.'/seeds');
+                    $this->addSeedsFrom(__DIR__ . $this->database_folder.'/Seeds');
                 }
             });
         }
