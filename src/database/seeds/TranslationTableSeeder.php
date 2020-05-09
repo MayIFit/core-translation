@@ -167,6 +167,18 @@ class TranslationTableSeeder extends Seeder
 			],
 			['text' => ['en' => 'Small letter without accents and underscores for whitespaces', 'hu' => 'Kis betűk ékezet nélkül, szóköz helyett aláhúzásokkal']],
 		);
+		Translation::updateOrCreate([
+				'group' => 'global',
+				'key' => 'images'
+			],
+			['text' => ['en' => 'Images', 'hu' => 'Képek']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'global',
+				'key' => 'files'
+			],
+			['text' => ['en' => 'Files', 'hu' => 'Fájlok']],
+		);
     }
 
     protected function addUserAttributeTranslations() {
