@@ -513,11 +513,24 @@ class TranslationTableSeeder extends Seeder
             ['text' => ['en' => 'Login', 'hu' => 'Bejelentkezés']],
         );
         Translation::updateOrCreate([
-            'group' => 'action',
-            'key' => 'register'
-        ],
-        ['text' => ['en' => 'Register', 'hu' => 'Regisztráció']],
-    );
+				'group' => 'action',
+				'key' => 'register'
+			],
+			['text' => ['en' => 'Register', 'hu' => 'Regisztráció']],
+		);
+        Translation::updateOrCreate([
+				'group' => 'action',
+				'key' => 'add_attribute'
+			],
+			['text' => ['en' => 'Add Attribute', 'hu' => 'Új Tulajdonság']],
+		);
+		
+        Translation::updateOrCreate([
+				'group' => 'action',
+				'key' => 'save_attributes'
+			],
+			['text' => ['en' => 'Save Attributes', 'hu' => 'Tulajdonságok Mentése']],
+		);
     }
 
     protected function errorTranslations() {
