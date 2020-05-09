@@ -38,13 +38,13 @@
             }
             $this->publishes([
                 __DIR__.'/GraphQL/schema' => './graphql/core',
-            ], '/');
+            ]);
             $this->publishes([
                 __DIR__.'/GraphQL/Scalars' => './app/GraphQL/Scalars/Extensions',
-            ], '/');
+            ]);
             $this->publishes([
                 __DIR__.'/GraphQL/Queries' => './app/GraphQL/Queries/Extensions',
-            ], '/');
+            ]);
             $this->registerPolicies();
         }
 
