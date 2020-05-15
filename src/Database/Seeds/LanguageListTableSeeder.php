@@ -6,11 +6,11 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 /**
- * Class LanguageTableSeeder
+ * Class LanguageListTableSeeder
  *
  * @package MayIFit\Core\Translation
  */
-class LanguageTableSeeder extends Seeder
+class LanguageListTableSeeder extends Seeder
 {
 
     private $languageArray = [
