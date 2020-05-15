@@ -9,6 +9,12 @@
             "email": "contact@mayifit.net"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/MayIFit/core-permission"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "MayIFit\\Core\\Translation\\": "src/",
@@ -23,7 +29,7 @@
         "laravel/framework": "^7.0",
         "spatie/laravel-translation-loader": "^2.4",
         "laravel/helpers": "^1.2",
-        "mayifit/core-permission": "dev-master"
+        "mayifit/core-permission": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.5"
