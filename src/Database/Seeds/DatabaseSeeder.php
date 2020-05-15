@@ -1,6 +1,6 @@
 <?php
 
-namespace MayIFit\Core\Permission\Database\Seeds;
+namespace MayIFit\Core\Translation\Database\Seeds;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
