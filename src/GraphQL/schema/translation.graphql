@@ -36,14 +36,12 @@ input UpdateTranslationInput {
     group: String!
     key: String!
     text: ObjectScalar
-    __typename: String
 }
 
 input CreateTranslationInput {
     group: String!
     key: String!
     text: ObjectScalar
-    __typename: String
 }
 
 type Language {
