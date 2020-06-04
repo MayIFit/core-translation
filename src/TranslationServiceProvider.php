@@ -37,15 +37,7 @@
                     $this->addSeedsAfterConsoleCommandFinished();
                 }
             }
-            $this->publishes([
-                __DIR__.'/GraphQL/schema' => './graphql/core',
-            ]);
-            $this->publishes([
-                __DIR__.'/GraphQL/Scalars' => './app/GraphQL/Scalars/Extensions',
-            ]);
-            $this->publishes([
-                __DIR__.'/GraphQL/Queries' => './app/GraphQL/Queries/Extensions',
-            ]);
+            $this->publishResources();
             $this->registerPolicies();
         }
 
@@ -53,6 +45,23 @@
             $this->app->bind('translation', function () {
                 return new Translation();
             });
+        }
+
+        /**
+         * Publish resources
+         *
+         * @return void
+         */
+        protected function publishResources() {
+            $this->publishes([
+                __DIR__.'/GraphQL/schema' => './graphql/core',
+            ]);
+            $this->publishes([
+                __DIR__.'/GraphQL/Scalars' => './app/GraphQL/Scalars/Core',
+            ]);
+            $this->publishes([
+                __DIR__.'/GraphQL/Queries' => './app/GraphQL/Queries/Core',
+            ]);
         }
 
         /**
