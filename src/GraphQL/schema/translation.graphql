@@ -1,5 +1,5 @@
 "A JSON like data structure like `{en: User, hu: Felhasználó}`"
-scalar ObjectScalar @scalar(class: "App\\GraphQL\\Scalars\\Extensions\\ObjectScalar")
+scalar ObjectScalar @scalar(class: "App\\GraphQL\\Scalars\\Core\\ObjectScalar")
 
 extend type Query {
     allTranslation: [Translation!]! @all
