@@ -5,16 +5,19 @@ extend type Query {
     allTranslation: [Translation!]! @all
     allLanguages: [Language!]! @cache
 
-    listTranslation(
-        key: String @eq 
-        group: String @eq
-    ): [Translation!]! 
-    @can(ability: "viewAny" model: "MayIFit\\Core\\Translation\\Models\\Translation") 
-    @paginate(type: "paginator")
-
     viewTranslation(
         id: ID! @eq
     ): Translation! @can(ability: "view" find: "id") @find
+}
+
+extend type Query @guard(with: ["sanctum"]) {
+    listTranslation(
+        key: String @where(operator: "like")
+        group: String @where(operator: "like")
+        text: String @where(operator: "like")
+    ): [Translation!]! 
+    @can(ability: "viewAny" model: "MayIFit\\Core\\Translation\\Models\\Translation") 
+    @paginate(type: "paginator")
 }
 
 extend type Mutation @guard(with: ["sanctum"]) {
