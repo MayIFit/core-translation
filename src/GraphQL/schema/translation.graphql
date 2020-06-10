@@ -3,11 +3,7 @@ scalar ObjectScalar @scalar(class: "App\\GraphQL\\Scalars\\Core\\ObjectScalar")
 
 extend type Query {
     allTranslation: [Translation!]! @all
-    allLanguages: [Language!]! @cache
-
-    viewTranslation(
-        id: ID! @eq
-    ): Translation! @can(ability: "view" find: "id") @find
+    allLanguage: [Language!]! @cache
 }
 
 extend type Query @guard(with: ["sanctum"]) {
@@ -18,6 +14,10 @@ extend type Query @guard(with: ["sanctum"]) {
     ): [Translation!]! 
     @can(ability: "viewAny" model: "MayIFit\\Core\\Translation\\Models\\Translation") 
     @paginate(type: "paginator")
+
+    viewTranslation(
+        id: ID! @eq
+    ): Translation! @can(ability: "view" find: "id") @find
 }
 
 extend type Mutation @guard(with: ["sanctum"]) {
