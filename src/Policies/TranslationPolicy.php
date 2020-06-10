@@ -5,7 +5,7 @@ namespace MayIFit\Core\Translation\Policies;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 use MayIFit\Core\Translation\Models\Translation;
-use MayIFit\Core\Permission\Models\User;
+use App\Models\User;
 
 class TranslationPolicy
 {
@@ -14,7 +14,7 @@ class TranslationPolicy
     /**
      * Determine whether the user can view any translations.
      *
-     * @param  \MayIFit\Core\Permission\Models\User  $user
+     * @param  \App\Models\User  $user
      * @return mixed
      */
     public function viewAny(User $user)
@@ -25,7 +25,7 @@ class TranslationPolicy
     /**
      * Determine whether the user can view the translation.
      *
-     * @param  \MayIFit\Core\Permission\Models\User  $user
+     * @param  \App\Models\User  $user
      * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return mixed
      */
@@ -37,7 +37,7 @@ class TranslationPolicy
     /**
      * Determine whether the user can create translations.
      *
-     * @param  \MayIFit\Core\Permission\Models\User  $user
+     * @param  \App\Models\User  $user
      * @return mixed
      */
     public function create(User $user)
@@ -48,7 +48,7 @@ class TranslationPolicy
     /**
      * Determine whether the user can update the translation.
      *
-     * @param  \MayIFit\Core\Permission\Models\User  $user
+     * @param  \App\Models\User  $user
      * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return mixed
      */
@@ -61,7 +61,7 @@ class TranslationPolicy
     /**
      * Determine whether the user can delete the translation.
      *
-     * @param  \MayIFit\Core\Permission\Models\User  $user
+     * @param  \App\Models\User  $user
      * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return mixed
      */
@@ -74,7 +74,7 @@ class TranslationPolicy
     /**
      * Determine whether the user can restore the translation.
      *
-     * @param  \MayIFit\Core\Permission\Models\User  $user
+     * @param  \App\Models\User  $user
      * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return mixed
      */
@@ -86,7 +86,7 @@ class TranslationPolicy
     /**
      * Determine whether the user can permanently delete the translation.
      *
-     * @param  \MayIFit\Core\Permission\Models\User  $user
+     * @param  \App\Models\User  $user
      * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return mixed
      */
