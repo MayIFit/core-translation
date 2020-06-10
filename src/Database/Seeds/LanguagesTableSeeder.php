@@ -6,11 +6,11 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 /**
- * Class LanguageListTableSeeder
+ * Class LanguagesTableSeeder
  *
  * @package MayIFit\Core\Translation
  */
-class LanguageListTableSeeder extends Seeder
+class LanguagesTableSeeder extends Seeder
 {
 
     private $languageArray = [
@@ -241,7 +241,7 @@ class LanguageListTableSeeder extends Seeder
     public function run()
     {
         foreach($this->languageArray as $iso => $name) {
-            DB::table('language_list')->insert([
+            DB::table('languages')->insert([
                 'ISO6391' => $iso,
                 'name' => $name
             ]);
