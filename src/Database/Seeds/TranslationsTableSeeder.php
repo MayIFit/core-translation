@@ -31,7 +31,7 @@ class TranslationsTableSeeder extends Seeder
     protected function addGeneralTranslations() {
 		Translation::updateOrCreate([
 				'group' => 'list',
-				'key' => 'Translation'
+				'key' => 'translation'
 			],
 			['text' => ['en' => 'Translation List', 'hu' => 'Fordítás Lista']],
 		);
