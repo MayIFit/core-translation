@@ -49,6 +49,7 @@ input CreateTranslationInput {
 
 type Language {
     id: ID!
+    "ISO 639-1"
     language: String! @rename(attribute: "ISO6391")
     name: String
 }
