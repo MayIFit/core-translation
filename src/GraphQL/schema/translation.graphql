@@ -8,9 +8,7 @@ extend type Query {
 
 extend type Query @guard(with: ["sanctum"]) {
     listTranslation(
-        key: String @where(operator: "like")
-        group: String @where(operator: "like")
-        text: String @where(operator: "like")
+        filter: _ @whereConditions(columnsEnum: "TranslationWhereColumn")
     ): [Translation!]! 
     @can(ability: "viewAny" model: "MayIFit\\Core\\Translation\\Models\\Translation") 
     @paginate(type: "paginator")
@@ -59,4 +57,11 @@ type Translation @modelClass(class: "\\MayIFit\\Core\\Translation\\Models\\Trans
     key: String!
     group: String!
     text: ObjectScalar
+}
+
+"A list of filterable columns."
+enum TranslationWhereColumn {
+    KEY @enum(value: "key")
+    GROUP @enum(value: "group")
+    TEXT @enum(value: "text")
 }
