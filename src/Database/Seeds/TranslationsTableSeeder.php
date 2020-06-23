@@ -26,6 +26,7 @@ class TranslationsTableSeeder extends Seeder
         $this->addStateTranslations();
         $this->actionTranslations();
         $this->errorTranslations();
+        $this->filterTranslations();
     }
 
     protected function addGeneralTranslations() {
@@ -558,5 +559,56 @@ class TranslationsTableSeeder extends Seeder
 			],
             ['text' => ['en' => 'Unauthorized action!', 'hu' => 'Jogosulatlan művelet!']],
 		);
-    }
+	}
+	
+	protected function filterTranslations() {
+		Translation::updateOrCreate([
+				'group' => 'filter',
+				'key' => 'lt'
+			],
+			['text' => ['en' => 'Lesser Than', 'hu' => 'Kisebb Mint']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'filter',
+				'key' => 'gt'
+			],
+			['text' => ['en' => 'Greater Than', 'hu' => 'Nagyobb Mint']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'filter',
+				'key' => 'gte'
+			],
+			['text' => ['en' => 'greater than or equal', 'hu' => 'nagyobb mint vagy egyenlő']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'filter',
+				'key' => 'lte'
+			],
+			['text' => ['en' => 'lesser than or equal', 'hu' => 'kisebb mint vagy egyenlő']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'filter',
+				'key' => 'eq'
+			],
+			['text' => ['en' => 'equal', 'hu' => 'egyenlő']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'filter',
+				'key' => 'neq'
+			],
+			['text' => ['en' => 'not equal', 'hu' => 'nem egyenlő']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'filter',
+				'key' => 'like'
+			],
+			['text' => ['en' => 'like', 'hu' => 'hasonló']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'filter',
+				'key' => 'between'
+			],
+			['text' => ['en' => 'between', 'hu' => 'között']],
+		);
+	}
 }
