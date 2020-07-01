@@ -17,26 +17,23 @@
     ],
     "autoload": {
         "psr-4": {
-            "MayIFit\\Core\\Translation\\": "src/",
-            "MayIFit\\Core\\Translation\\Database\\Seeds\\": "src/Database/Seeds/",
-            "MayIFit\\Core\\Translation\\Facades\\": "src/Facades/",
-            "MayIFit\\Core\\Translation\\Models\\": "src/Models/",
-            "MayIFit\\Core\\Translation\\Policies\\": "src/Policies/"
+            "MayIFit\\Core\\Translation\\": "src/"
         }
     },
     "require": {
-        "php": ">= 7.1",
+        "php": "^7.2",
         "spatie/laravel-translation-loader": "^2.4",
         "laravel/helpers": "^1.2",
         "mayifit/core-permission": "^1.0"
     },
     "require-dev": {
-        "laravel/framework": "^6.0 || ^7.0",
-        "phpunit/phpunit": "^6.5 || ^7.5 || ^8.4",
-        "orchestra/database": "^4.0 || ^5.0",
-        "orchestra/testbench": "^4.0 || ^5.0"
+        "orchestra/testbench": "^4.0 || ^5.0",
+        "phpunit/phpunit": "^8.0"
     },
     "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        },
         "laravel": {
             "providers": [
                 "MayIFit\\Core\\Translation\\TranslationServiceProvider"
@@ -45,6 +42,9 @@
                 "Translation": "MayIFit\\Core\\Translation\\Facades\\Translation"
             }
         }
+    },
+    "config": {
+        "sort-packages": true
     },
     "minimum-stability": "dev",
     "prefer-stable": true
