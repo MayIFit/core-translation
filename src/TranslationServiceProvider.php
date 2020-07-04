@@ -50,6 +50,9 @@
             $this->publishes([
                 __DIR__.'/GraphQL/Queries' => $configRepository->get('core-translation.queries.register'),
             ], 'graphql');
+            $this->publishes([
+                __DIR__.'/GraphQL/Scalars' => $configRepository->get('core-translation.scalars.register'),
+            ], 'graphql');
         }
     }
 ?>
