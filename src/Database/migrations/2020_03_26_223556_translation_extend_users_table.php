@@ -13,9 +13,11 @@ class TranslationExtendUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('language')->nullable()->default('hu');
-        });
+        if (Schema::hasTable('users')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->string('language')->nullable()->default('hu');
+            });
+        }
     }
 
     /**
@@ -25,8 +27,10 @@ class TranslationExtendUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['language']);
-        });
+        if (Schema::hasTable('users')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->dropColumn(['language']);
+            });
+        }
     }
 }
