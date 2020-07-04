@@ -30,6 +30,7 @@
          */
         public function boot(ConfigRepository $configRepository): void {
             $this->loadMigrationsFrom(__DIR__.$this->database_folder.'/migrations');
+            $this->mergeConfigFrom(__DIR__.'/core-translation.php', 'core-translation');
             $this->publishResources($configRepository);
             $this->registerPolicies();
         }
