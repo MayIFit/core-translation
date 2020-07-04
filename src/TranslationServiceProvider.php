@@ -43,6 +43,7 @@
             $this->publishes([
                 __DIR__.'/core-translation.php' => $this->app->configPath().'/core-translation.php',
             ], 'config');
+
             $this->publishes([
                 __DIR__.'/GraphQL/schema' => $configRepository->get('core-translation.schema.register'),
             ], 'schema');
@@ -50,6 +51,7 @@
             $this->publishes([
                 __DIR__.'/GraphQL/Queries' => $configRepository->get('core-translation.queries.register'),
             ], 'graphql');
+            
             $this->publishes([
                 __DIR__.'/GraphQL/Scalars' => $configRepository->get('core-translation.scalars.register'),
             ], 'graphql');
