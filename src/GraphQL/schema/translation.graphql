@@ -1,5 +1,5 @@
 "A JSON like data structure like `{en: User, hu: Felhasználó}`"
-scalar ObjectScalar
+scalar ObjectScalar @scalar(class: "MayIFit\\Core\\Translation\\GraphQL\\Scalars\\ObjectScalar")
 
 extend type Query {
     allTranslation: [Translation!]! @all

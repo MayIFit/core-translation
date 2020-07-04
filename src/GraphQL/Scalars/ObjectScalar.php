@@ -1,6 +1,6 @@
 <?php
 
-namespace App\GraphQL\Scalars;
+namespace MayIFit\Core\Translation\GraphQL\Scalars;
 
 use GraphQL\Type\Definition\ScalarType;
 
