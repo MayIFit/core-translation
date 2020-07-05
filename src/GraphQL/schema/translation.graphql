@@ -4,6 +4,7 @@ scalar ObjectScalar @scalar(class: "MayIFit\\Core\\Translation\\GraphQL\\Scalars
 extend type Query {
     allTranslation: [Translation!]! @all
     allLanguage: [Language!]! @cache
+        @field(resolver: "MayIFit\\Core\\Translation\\GraphQL\\Queries\\AllLanguage")
 }
 
 extend type Query @guard(with: ["sanctum"]) {

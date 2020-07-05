@@ -5,10 +5,16 @@ namespace MayIFit\Core\Translation\GraphQL\Queries;
 use GraphQL\Type\Definition\ResolveInfo;
 use Nuwave\Lighthouse\Support\Contracts\GraphQLContext;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Collection;
 
 class AllLanguage
 {
-    public function __invoke($rootValue,array $args, GraphQLContext $context, ResolveInfo $resolveInfo) {
+     /**
+     * Return all languages available in the System
+     * 
+     * @return Collection
+     */
+    public function __invoke($rootValue,array $args, GraphQLContext $context, ResolveInfo $resolveInfo): Collection {
         $languages = DB::table('languages')->get();
         return $languages ?? [];
     }
