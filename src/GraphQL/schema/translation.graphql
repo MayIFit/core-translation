@@ -52,7 +52,7 @@ type Language {
     name: String
 }
 
-type Translation @modelClass(class: "\\MayIFit\\Core\\Translation\\Models\\Translation") {
+type Translation @modelClass(class: "MayIFit\\Core\\Translation\\Models\\Translation") {
     id: ID!
     key: String!
     group: String!
