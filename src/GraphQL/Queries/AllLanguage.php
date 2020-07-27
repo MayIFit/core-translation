@@ -5,7 +5,7 @@ namespace MayIFit\Core\Translation\GraphQL\Queries;
 use GraphQL\Type\Definition\ResolveInfo;
 use Nuwave\Lighthouse\Support\Contracts\GraphQLContext;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Collection;
 
 class AllLanguage
 {
