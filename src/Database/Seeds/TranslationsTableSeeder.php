@@ -531,12 +531,29 @@ class TranslationsTableSeeder extends Seeder
 			],
 			['text' => ['en' => 'add attribute', 'hu' => 'új tulajdonság']],
 		);
-		
         Translation::updateOrCreate([
 				'group' => 'action',
 				'key' => 'save_attributes'
 			],
 			['text' => ['en' => 'save attributes', 'hu' => 'tulajdonságok mentése']],
+		);
+        Translation::updateOrCreate([
+				'group' => 'action',
+				'key' => 'ignore'
+			],
+			['text' => ['en' => 'ignore', 'hu' => 'mellőzés']],
+		);
+        Translation::updateOrCreate([
+				'group' => 'action',
+				'key' => 'import_file'
+			],
+			['text' => ['en' => 'import file', 'hu' => 'fájl betöltése']],
+		);
+        Translation::updateOrCreate([
+				'group' => 'action',
+				'key' => 'parse_file'
+			],
+			['text' => ['en' => 'parse file', 'hu' => 'fájl beolvasása']],
 		);
     }
 
