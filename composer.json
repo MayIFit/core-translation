@@ -9,12 +9,6 @@
             "email": "contact@mayifit.net"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/MayIFit/core-permission"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "MayIFit\\Core\\Translation\\": "src/"
