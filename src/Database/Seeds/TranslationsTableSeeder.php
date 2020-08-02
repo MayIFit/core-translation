@@ -84,6 +84,12 @@ class TranslationsTableSeeder extends Seeder
 			],
             ['text' => ['en' => 'password', 'hu' => 'jelszó']],
 		);
+		Translation::updateOrCreate([
+				'group' => 'global',
+				'key' => 'password_again'
+			],
+			['text' => ['en' => 'password again', 'hu' => 'jelszó újra']],
+		);
         Translation::updateOrCreate([
 	            'group' => 'global',
 	            'key' => 'key'
@@ -524,6 +530,12 @@ class TranslationsTableSeeder extends Seeder
 				'key' => 'register'
 			],
 			['text' => ['en' => 'register', 'hu' => 'regisztráció']],
+		);
+        Translation::updateOrCreate([
+				'group' => 'action',
+				'key' => 'submit'
+			],
+			['text' => ['en' => 'submit', 'hu' => 'elküldés']],
 		);
         Translation::updateOrCreate([
 				'group' => 'action',
