@@ -27,6 +27,7 @@ class TranslationsTableSeeder extends Seeder
         $this->actionTranslations();
         $this->errorTranslations();
         $this->filterTranslations();
+        $this->validationTranslations();
     }
 
     protected function addGeneralTranslations() {
@@ -197,6 +198,24 @@ class TranslationsTableSeeder extends Seeder
 				'key' => 'documents'
 			],
 			['text' => ['en' => 'documents', 'hu' => 'dokumentumok']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'global',
+				'key' => 'administration'
+			],
+			['text' => ['en' => 'administration', 'hu' => 'adminisztráció']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'global',
+				'key' => 'manage_users'
+			],
+			['text' => ['en' => 'manage users', 'hu' => 'felhasználók kezelése']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'global',
+				'key' => 'manage_system'
+			],
+			['text' => ['en' => 'manage system', 'hu' => 'rendszer kezelése']],
 		);
     }
 
@@ -580,13 +599,19 @@ class TranslationsTableSeeder extends Seeder
 	            'group' => 'error',
 	            'key' => 'module_disabled'
 			],
-            ['text' => ['en' => 'module is disabled!', 'hu' => 'modul nincs aktiválva!']],
+            ['text' => ['en' => 'module is disabled', 'hu' => 'modul nincs aktiválva']],
 		);
         Translation::updateOrCreate([
 	            'group' => 'error',
 	            'key' => 'unauthorized'
 			],
-            ['text' => ['en' => 'unauthorized action!', 'hu' => 'jogosulatlan művelet!']],
+            ['text' => ['en' => 'unauthorized action', 'hu' => 'jogosulatlan művelet']],
+		);
+        Translation::updateOrCreate([
+	            'group' => 'error',
+	            'key' => 'no_matching_credentials_found'
+			],
+            ['text' => ['en' => 'no matching credentials found', 'hu' => 'téves bejelentkezési adatok']],
 		);
 	}
 	
@@ -638,6 +663,33 @@ class TranslationsTableSeeder extends Seeder
 				'key' => 'between'
 			],
 			['text' => ['en' => 'between', 'hu' => 'között']],
+		);
+	}
+
+	function validationTranslations() {
+		Translation::updateOrCreate([
+				'group' => 'input',
+				'key' => 'email'
+			],
+			['text' => ['en' => 'email', 'hu' => 'email']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'validation',
+				'key' => 'exists'
+			],
+			['text' => ['en' => 'doesn\'t exists', 'hu' => 'nem létezik']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'validation',
+				'key' => 'uniquie'
+			],
+			['text' => ['en' => 'already exists', 'hu' => 'már létezik']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'validation',
+				'key' => 'min'
+			],
+			['text' => ['en' => 'min length not reached', 'hu' => 'minimum hossz nem megfelelő']],
 		);
 	}
 }
