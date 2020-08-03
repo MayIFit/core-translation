@@ -221,7 +221,7 @@ class TranslationsTableSeeder extends Seeder
 
     protected function addUserAttributeTranslations() {
         Translation::updateOrCreate([
-	            'group' => 'user',
+	            'group' => 'global',
 	            'key' => 'user'
 			],
             ['text' => ['en' => 'user', 'hu' => 'felhasználó']],
