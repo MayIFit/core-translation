@@ -506,7 +506,7 @@ class TranslationsTableSeeder extends Seeder
 	            'group' => 'action',
 	            'key' => 'create'
 			],
-            ['text' => ['en' => 'creeate new', 'hu' => 'új létrehozása']],
+            ['text' => ['en' => 'create new', 'hu' => 'új létrehozása']],
 		);
         Translation::updateOrCreate([
 	            'group' => 'action',
