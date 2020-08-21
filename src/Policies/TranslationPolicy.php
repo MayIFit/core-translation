@@ -7,6 +7,11 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 use MayIFit\Core\Translation\Models\Translation;
 use App\Models\User;
 
+/**
+ * Class TranslationPolicy
+ *
+ * @package MayIFit\Core\Translation
+ */
 class TranslationPolicy
 {
     use HandlesAuthorization;

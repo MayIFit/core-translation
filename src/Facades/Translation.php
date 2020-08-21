@@ -4,6 +4,11 @@ namespace MayIFit\Core\Translation\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * Class Translation
+ *
+ * @package MayIFit\Core\Translation
+ */
 class Translation extends Facade
 {
     /**

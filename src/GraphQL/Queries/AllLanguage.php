@@ -7,6 +7,11 @@ use Nuwave\Lighthouse\Support\Contracts\GraphQLContext;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
 
+/**
+ * Class AllLanguage
+ *
+ * @package MayIFit\Core\Translation
+ */
 class AllLanguage
 {
      /**

@@ -217,6 +217,18 @@ class TranslationsTableSeeder extends Seeder
 			],
 			['text' => ['en' => 'manage system', 'hu' => 'rendszer kezelése']],
 		);
+		Translation::updateOrCreate([
+				'group' => 'global',
+				'key' => 'all_rights_reserved'
+			],
+			['text' => ['en' => 'All rights reserved', 'hu' => 'Minden jog fenntartva']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'global',
+				'key' => 'regards'
+			],
+			['text' => ['en' => 'Regards', 'hu' => 'Üdvözlettel']],
+		);
     }
 
     protected function addUserAttributeTranslations() {
@@ -429,6 +441,18 @@ class TranslationsTableSeeder extends Seeder
 	            'key' => 'actions'
 			],
             ['text' => ['en' => 'actions', 'hu' => 'kezelés']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'action',
+				'key' => 'check here'
+			],
+			['text' => ['en' => 'Check Here', 'hu' => 'Kattintson Ide']],
+		);
+		Translation::updateOrCreate([
+				'group' => 'action',
+				'key' => 'copy_if_not_working'
+			],
+			['text' => ['en' => 'If you’re having trouble clicking the button, copy and paste the URL below', 'hu' => 'Ha nem tudsz a gombra kattintani másold be a lenti címet a böngésződbe']],
 		);
         Translation::updateOrCreate([
 	            'group' => 'action',
