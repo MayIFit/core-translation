@@ -16,7 +16,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
     public function setUp(): void
     {
         parent::setUp();
-        
+
         $this->publishResources();
         $this->artisan('migrate', ['--database' => 'testbench'])->execute();
     }
@@ -43,7 +43,8 @@ class TestCase extends \Orchestra\Testbench\TestCase
         $app['config']->set('lighthouse.namespaces.models', 'Illuminate\\Foundation\\Auth');
     }
 
-    protected function publishResources() {
+    protected function publishResources()
+    {
         $this->artisan('vendor:publish', [
             '--provider' => 'Nuwave\\Lighthouse\\LighthouseServiceProvider',
             '--tag' => 'schema'
@@ -65,14 +66,16 @@ class TestCase extends \Orchestra\Testbench\TestCase
             '--force' => true
         ])->execute();
 
-        file_put_contents($this->app['config']->get('lighthouse.schema.register'), 
-        '
+        file_put_contents(
+            $this->app['config']->get('lighthouse.schema.register'),
+            '
 #import core/*.graphql
 #import extensions/*.graphql
 
 type Query
 
 type Mutation
-        ');
+        '
+        );
     }
 }

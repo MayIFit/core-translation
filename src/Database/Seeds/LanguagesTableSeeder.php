@@ -240,7 +240,7 @@ class LanguagesTableSeeder extends Seeder
      */
     public function run()
     {
-        foreach($this->languageArray as $iso => $name) {
+        foreach ($this->languageArray as $iso => $name) {
             DB::table('languages')->insert([
                 'ISO6391' => $iso,
                 'name' => $name

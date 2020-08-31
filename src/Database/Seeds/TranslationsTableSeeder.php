@@ -12,677 +12,791 @@ use MayIFit\Core\Translation\Models\Translation;
  */
 class TranslationsTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        $this->addGeneralTranslations();
-        $this->addUserAttributeTranslations();
-        $this->addDateRelatedTranslations();
-        $this->addEntityEventTranslations();
-        $this->addStateTranslations();
-        $this->actionTranslations();
-        $this->errorTranslations();
-        $this->filterTranslations();
-        $this->validationTranslations();
-    }
+	/**
+	 * Run the database seeds.
+	 *
+	 * @return void
+	 */
+	public function run()
+	{
+		$this->addGeneralTranslations();
+		$this->addUserAttributeTranslations();
+		$this->addDateRelatedTranslations();
+		$this->addEntityEventTranslations();
+		$this->addStateTranslations();
+		$this->actionTranslations();
+		$this->errorTranslations();
+		$this->filterTranslations();
+		$this->validationTranslations();
+	}
 
-    protected function addGeneralTranslations() {
-		Translation::updateOrCreate([
+	protected function addGeneralTranslations()
+	{
+		Translation::updateOrCreate(
+			[
 				'group' => 'list',
 				'key' => 'translation'
 			],
 			['text' => ['en' => 'translation list', 'hu' => 'fordítás lista']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'name'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'name'
 			],
-            ['text' => ['en' => 'name', 'hu' => 'név']],
+			['text' => ['en' => 'name', 'hu' => 'név']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'type'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'type'
 			],
-            ['text' => ['en' => 'type', 'hu' => 'típus']],
+			['text' => ['en' => 'type', 'hu' => 'típus']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'translations'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'translations'
 			],
-            ['text' => ['en' => 'translations', 'hu' => 'fordítások']],
+			['text' => ['en' => 'translations', 'hu' => 'fordítások']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'users'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'users'
 			],
-            ['text' => ['en' => 'users', 'hu' => 'felhasználók']],
+			['text' => ['en' => 'users', 'hu' => 'felhasználók']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'description'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'description'
 			],
-            ['text' => ['en' => 'description', 'hu' => 'leírás']],
+			['text' => ['en' => 'description', 'hu' => 'leírás']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'information'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'information'
 			],
-            ['text' => ['en' => 'information', 'hu' => 'információ']],
+			['text' => ['en' => 'information', 'hu' => 'információ']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'email'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'email'
 			],
-            ['text' => ['en' => 'email', 'hu' => 'e-mail']],
+			['text' => ['en' => 'email', 'hu' => 'e-mail']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'password'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'password'
 			],
-            ['text' => ['en' => 'password', 'hu' => 'jelszó']],
+			['text' => ['en' => 'password', 'hu' => 'jelszó']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'global',
 				'key' => 'password_again'
 			],
 			['text' => ['en' => 'password again', 'hu' => 'jelszó újra']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'key'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'key'
 			],
-            ['text' => ['en' => 'key', 'hu' => 'kulcs']],
+			['text' => ['en' => 'key', 'hu' => 'kulcs']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'group'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'group'
 			],
-            ['text' => ['en' => 'group', 'hu' => 'csoport']],
+			['text' => ['en' => 'group', 'hu' => 'csoport']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'language'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'language'
 			],
-            ['text' => ['en' => 'language', 'hu' => 'nyelv']],
+			['text' => ['en' => 'language', 'hu' => 'nyelv']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'value'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'value'
 			],
-            ['text' => ['en' => 'value', 'hu' => 'érték']],
+			['text' => ['en' => 'value', 'hu' => 'érték']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'filters'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'filters'
 			],
-            ['text' => ['en' => 'filters', 'hu' => 'szűrők']],
+			['text' => ['en' => 'filters', 'hu' => 'szűrők']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'system'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'system'
 			],
-            ['text' => ['en' => 'system', 'hu' => 'rendszer']],
+			['text' => ['en' => 'system', 'hu' => 'rendszer']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'settings'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'settings'
 			],
-            ['text' => ['en' => 'settings', 'hu' => 'beállítások']],
+			['text' => ['en' => 'settings', 'hu' => 'beállítások']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'breadcrumbs'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'breadcrumbs'
 			],
-            ['text' => ['en' => 'breadcrumbs', 'hu' => 'morzsák']],
+			['text' => ['en' => 'breadcrumbs', 'hu' => 'morzsák']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'list_view'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'list_view'
 			],
-            ['text' => ['en' => 'list view', 'hu' => 'lista nézet']],
+			['text' => ['en' => 'list view', 'hu' => 'lista nézet']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'board_view'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'board_view'
 			],
-            ['text' => ['en' => 'board view', 'hu' => 'tábla nézet']],
+			['text' => ['en' => 'board view', 'hu' => 'tábla nézet']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'system_settings'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'system_settings'
 			],
-            ['text' => ['en' => 'system settings', 'hu' => 'rendszer beállítások']],
+			['text' => ['en' => 'system settings', 'hu' => 'rendszer beállítások']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'entity'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'entity'
 			],
-            ['text' => ['en' => 'entity', 'hu' => 'elem']],
+			['text' => ['en' => 'entity', 'hu' => 'elem']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'home'
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'home'
 			],
-            ['text' => ['en' => 'home', 'hu' => 'nyitólap']],
-        );
-        Translation::updateOrCreate([
+			['text' => ['en' => 'home', 'hu' => 'nyitólap']],
+		);
+		Translation::updateOrCreate(
+			[
 				'group' => 'global',
 				'key' => 'forgot_password'
 			],
 			['text' => ['en' => 'forgot password', 'hu' => 'elfelejtett jelszó']],
-    	);
-		Translation::updateOrCreate([
+		);
+		Translation::updateOrCreate(
+			[
 				'group' => 'global',
 				'key' => 'small_letters_without_accents_and_underscores_only'
 			],
 			['text' => ['en' => 'small letter without accents and underscores for whitespaces', 'hu' => 'kis betűk ékezet nélkül, szóköz helyett aláhúzásokkal']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'global',
 				'key' => 'images'
 			],
 			['text' => ['en' => 'images', 'hu' => 'képek']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'global',
 				'key' => 'files'
 			],
 			['text' => ['en' => 'files', 'hu' => 'fájlok']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'global',
 				'key' => 'documents'
 			],
 			['text' => ['en' => 'documents', 'hu' => 'dokumentumok']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'global',
 				'key' => 'administration'
 			],
 			['text' => ['en' => 'administration', 'hu' => 'adminisztráció']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'global',
 				'key' => 'manage_users'
 			],
 			['text' => ['en' => 'manage users', 'hu' => 'felhasználók kezelése']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'global',
 				'key' => 'manage_system'
 			],
 			['text' => ['en' => 'manage system', 'hu' => 'rendszer kezelése']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'global',
 				'key' => 'all_rights_reserved'
 			],
 			['text' => ['en' => 'All rights reserved', 'hu' => 'Minden jog fenntartva']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'global',
 				'key' => 'regards'
 			],
 			['text' => ['en' => 'Regards', 'hu' => 'Üdvözlettel']],
 		);
-    }
+	}
 
-    protected function addUserAttributeTranslations() {
-        Translation::updateOrCreate([
-	            'group' => 'global',
-	            'key' => 'user'
+	protected function addUserAttributeTranslations()
+	{
+		Translation::updateOrCreate(
+			[
+				'group' => 'global',
+				'key' => 'user'
 			],
-            ['text' => ['en' => 'user', 'hu' => 'felhasználó']],
+			['text' => ['en' => 'user', 'hu' => 'felhasználó']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'user',
-	            'key' => 'profile'
+		Translation::updateOrCreate(
+			[
+				'group' => 'user',
+				'key' => 'profile'
 			],
-            ['text' => ['en' => 'user profile', 'hu' => 'felhasználói profil']],
+			['text' => ['en' => 'user profile', 'hu' => 'felhasználói profil']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'user',
-	            'key' => 'real_name'
+		Translation::updateOrCreate(
+			[
+				'group' => 'user',
+				'key' => 'real_name'
 			],
-            ['text' => ['en' => 'real name', 'hu' => 'teljes, valós név']],
+			['text' => ['en' => 'real name', 'hu' => 'teljes, valós név']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'user',
-	            'key' => 'name'
+		Translation::updateOrCreate(
+			[
+				'group' => 'user',
+				'key' => 'name'
 			],
-            ['text' => ['en' => 'user name', 'hu' => 'felhasználónév']],
+			['text' => ['en' => 'user name', 'hu' => 'felhasználónév']],
 		);
-    }
+	}
 
-    protected function addDateRelatedTranslations() {
-        Translation::updateOrCreate([
-	            'group' => 'date',
-	            'key' => 'date'
+	protected function addDateRelatedTranslations()
+	{
+		Translation::updateOrCreate(
+			[
+				'group' => 'date',
+				'key' => 'date'
 			],
-            ['text' => ['en' => 'date', 'hu' => 'dátum']],
+			['text' => ['en' => 'date', 'hu' => 'dátum']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'date',
-	            'key' => 'created_at'
+		Translation::updateOrCreate(
+			[
+				'group' => 'date',
+				'key' => 'created_at'
 			],
-            ['text' => ['en' => 'created at', 'hu' => 'létrehozva']],
+			['text' => ['en' => 'created at', 'hu' => 'létrehozva']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'date',
-	            'key' => 'updated_at'
+		Translation::updateOrCreate(
+			[
+				'group' => 'date',
+				'key' => 'updated_at'
 			],
-            ['text' => ['en' => 'updated at', 'hu' => 'módosítva']],
+			['text' => ['en' => 'updated at', 'hu' => 'módosítva']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'date',
-	            'key' => 'deleted_at'
+		Translation::updateOrCreate(
+			[
+				'group' => 'date',
+				'key' => 'deleted_at'
 			],
-            ['text' => ['en' => 'deleted at', 'hu' => 'törölve']],
-		);            
-        Translation::updateOrCreate([
-	            'group' => 'date',
-	            'key' => 'permitted_at'
-			],
-            ['text' => ['en' => 'permitted at', 'hu' => 'jóváhagyva']],
+			['text' => ['en' => 'deleted at', 'hu' => 'törölve']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'date',
-	            'key' => 'this_month'
+		Translation::updateOrCreate(
+			[
+				'group' => 'date',
+				'key' => 'permitted_at'
 			],
-            ['text' => ['en' => 'this month', 'hu' => 'ez a hónap']],
+			['text' => ['en' => 'permitted at', 'hu' => 'jóváhagyva']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'date',
-	            'key' => 'prev_month'
+		Translation::updateOrCreate(
+			[
+				'group' => 'date',
+				'key' => 'this_month'
 			],
-            ['text' => ['en' => 'previous month', 'hu' => 'előző hónap']],
+			['text' => ['en' => 'this month', 'hu' => 'ez a hónap']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'date',
-	            'key' => 'from'
+		Translation::updateOrCreate(
+			[
+				'group' => 'date',
+				'key' => 'prev_month'
 			],
-            ['text' => ['en' => 'date from', 'hu' => 'dátum-tól']],
+			['text' => ['en' => 'previous month', 'hu' => 'előző hónap']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'date',
-	            'key' => 'to'
+		Translation::updateOrCreate(
+			[
+				'group' => 'date',
+				'key' => 'from'
 			],
-            ['text' => ['en' => 'date to', 'hu' => 'dátum-ig']],
+			['text' => ['en' => 'date from', 'hu' => 'dátum-tól']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'date',
-	            'key' => 'workday'
+		Translation::updateOrCreate(
+			[
+				'group' => 'date',
+				'key' => 'to'
 			],
-            ['text' => ['en' => 'workday', 'hu' => 'munkanap']],
+			['text' => ['en' => 'date to', 'hu' => 'dátum-ig']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'date',
-	            'key' => 'non_working_day'
+		Translation::updateOrCreate(
+			[
+				'group' => 'date',
+				'key' => 'workday'
 			],
-            ['text' => ['en' => 'non working day', 'hu' => 'munkaszüneti nap']],
+			['text' => ['en' => 'workday', 'hu' => 'munkanap']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'date',
-	            'key' => 'now'
+		Translation::updateOrCreate(
+			[
+				'group' => 'date',
+				'key' => 'non_working_day'
 			],
-            ['text' => ['en' => 'now', 'hu' => 'most']],
+			['text' => ['en' => 'non working day', 'hu' => 'munkaszüneti nap']],
 		);
-    }
+		Translation::updateOrCreate(
+			[
+				'group' => 'date',
+				'key' => 'now'
+			],
+			['text' => ['en' => 'now', 'hu' => 'most']],
+		);
+	}
 
-    protected function addEntityEventTranslations() {
-        Translation::updateOrCreate([
-	            'group' => 'entity',
-	            'key' => 'created'
+	protected function addEntityEventTranslations()
+	{
+		Translation::updateOrCreate(
+			[
+				'group' => 'entity',
+				'key' => 'created'
 			],
-            ['text' => ['en' => 'entity created', 'hu' => 'elem létrehozva']],
+			['text' => ['en' => 'entity created', 'hu' => 'elem létrehozva']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'entity',
-	            'key' => 'deleted'
+		Translation::updateOrCreate(
+			[
+				'group' => 'entity',
+				'key' => 'deleted'
 			],
-            ['text' => ['en' => 'entity deleted', 'hu' => 'elem törölve']],
+			['text' => ['en' => 'entity deleted', 'hu' => 'elem törölve']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'entity',
-	            'key' => 'updated'
+		Translation::updateOrCreate(
+			[
+				'group' => 'entity',
+				'key' => 'updated'
 			],
-            ['text' => ['en' => 'entity updated', 'hu' => 'elem módosítva']],
+			['text' => ['en' => 'entity updated', 'hu' => 'elem módosítva']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'entity',
-	            'key' => 'exists'
+		Translation::updateOrCreate(
+			[
+				'group' => 'entity',
+				'key' => 'exists'
 			],
-            ['text' => ['en' => 'entity already exists', 'hu' => 'elem már létezik']],
+			['text' => ['en' => 'entity already exists', 'hu' => 'elem már létezik']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'entity',
-	            'key' => 'uploaded'
+		Translation::updateOrCreate(
+			[
+				'group' => 'entity',
+				'key' => 'uploaded'
 			],
-            ['text' => ['en' => 'entity uploaded', 'hu' => 'elem feltöltve']],
+			['text' => ['en' => 'entity uploaded', 'hu' => 'elem feltöltve']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'entity',
-	            'key' => 'created_by'
+		Translation::updateOrCreate(
+			[
+				'group' => 'entity',
+				'key' => 'created_by'
 			],
-            ['text' => ['en' => 'created by', 'hu' => 'létrehozta']],
+			['text' => ['en' => 'created by', 'hu' => 'létrehozta']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'entity',
-	            'key' => 'updated_by'
+		Translation::updateOrCreate(
+			[
+				'group' => 'entity',
+				'key' => 'updated_by'
 			],
-            ['text' => ['en' => 'updated by', 'hu' => 'módosította']],
+			['text' => ['en' => 'updated by', 'hu' => 'módosította']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'entity',
-	            'key' => 'deleted_by'
+		Translation::updateOrCreate(
+			[
+				'group' => 'entity',
+				'key' => 'deleted_by'
 			],
-            ['text' => ['en' => 'deleted by', 'hu' => 'törölte']],
+			['text' => ['en' => 'deleted by', 'hu' => 'törölte']],
 		);
-    }
+	}
 
-    protected function addStateTranslations() {
-        Translation::updateOrCreate([
-	            'group' => 'state',
-	            'key' => 'state'
+	protected function addStateTranslations()
+	{
+		Translation::updateOrCreate(
+			[
+				'group' => 'state',
+				'key' => 'state'
 			],
-            ['text' => ['en' => 'state', 'hu' => 'státusz']],
+			['text' => ['en' => 'state', 'hu' => 'státusz']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'state',
-	            'key' => 'pending'
+		Translation::updateOrCreate(
+			[
+				'group' => 'state',
+				'key' => 'pending'
 			],
-            ['text' => ['en' => 'pending', 'hu' => 'elfogadásra vár']],
+			['text' => ['en' => 'pending', 'hu' => 'elfogadásra vár']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'state',
-	            'key' => 'permitted'
+		Translation::updateOrCreate(
+			[
+				'group' => 'state',
+				'key' => 'permitted'
 			],
-            ['text' => ['en' => 'permitted', 'hu' => 'engedélyezve']],
+			['text' => ['en' => 'permitted', 'hu' => 'engedélyezve']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'state',
-	            'key' => 'active'
+		Translation::updateOrCreate(
+			[
+				'group' => 'state',
+				'key' => 'active'
 			],
-            ['text' => ['en' => 'active', 'hu' => 'aktív']],
+			['text' => ['en' => 'active', 'hu' => 'aktív']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'state',
-	            'key' => 'inactive'
+		Translation::updateOrCreate(
+			[
+				'group' => 'state',
+				'key' => 'inactive'
 			],
-            ['text' => ['en' => 'inactive', 'hu' => 'inaktív']],
+			['text' => ['en' => 'inactive', 'hu' => 'inaktív']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'state',
-	            'key' => 'disabled'
+		Translation::updateOrCreate(
+			[
+				'group' => 'state',
+				'key' => 'disabled'
 			],
-            ['text' => ['en' => 'disabled', 'hu' => 'kikapcsolva']],
+			['text' => ['en' => 'disabled', 'hu' => 'kikapcsolva']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'state',
-	            'key' => 'enabled'
+		Translation::updateOrCreate(
+			[
+				'group' => 'state',
+				'key' => 'enabled'
 			],
-            ['text' => ['en' => 'enabled', 'hu' => 'bekapcsolva']],
+			['text' => ['en' => 'enabled', 'hu' => 'bekapcsolva']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'state',
-	            'key' => 'not_found'
+		Translation::updateOrCreate(
+			[
+				'group' => 'state',
+				'key' => 'not_found'
 			],
-            ['text' => ['en' => 'not found', 'hu' => 'nem található']],
+			['text' => ['en' => 'not found', 'hu' => 'nem található']],
 		);
-    }
+	}
 
-    protected function actionTranslations() {
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'actions'
+	protected function actionTranslations()
+	{
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'actions'
 			],
-            ['text' => ['en' => 'actions', 'hu' => 'kezelés']],
+			['text' => ['en' => 'actions', 'hu' => 'kezelés']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'action',
 				'key' => 'check here'
 			],
 			['text' => ['en' => 'Check Here', 'hu' => 'Kattintson Ide']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'action',
 				'key' => 'copy_if_not_working'
 			],
 			['text' => ['en' => 'If you’re having trouble clicking the button, copy and paste the URL below', 'hu' => 'Ha nem tudsz a gombra kattintani másold be a lenti címet a böngésződbe']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'search'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'search'
 			],
-            ['text' => ['en' => 'search', 'hu' => 'keresés']],
+			['text' => ['en' => 'search', 'hu' => 'keresés']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'print'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'print'
 			],
-            ['text' => ['en' => 'print', 'hu' => 'nyomtatás']],
+			['text' => ['en' => 'print', 'hu' => 'nyomtatás']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'check_all'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'check_all'
 			],
-            ['text' => ['en' => 'check all', 'hu' => 'összes kijelölése']],
+			['text' => ['en' => 'check all', 'hu' => 'összes kijelölése']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'reset_filter'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'reset_filter'
 			],
-            ['text' => ['en' => 'reset filter', 'hu' => 'szűrők törlése']],
+			['text' => ['en' => 'reset filter', 'hu' => 'szűrők törlése']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'show_more'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'show_more'
 			],
-            ['text' => ['en' => 'show more', 'hu' => 'mutass többet']],
+			['text' => ['en' => 'show more', 'hu' => 'mutass többet']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'confirm_delete'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'confirm_delete'
 			],
-            ['text' => ['en' => 'confirm delete', 'hu' => 'törlés megerősítése']],
+			['text' => ['en' => 'confirm delete', 'hu' => 'törlés megerősítése']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'save'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'save'
 			],
-            ['text' => ['en' => 'save', 'hu' => 'mentés']],
+			['text' => ['en' => 'save', 'hu' => 'mentés']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'cancel'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'cancel'
 			],
-            ['text' => ['en' => 'cancel', 'hu' => 'mégse']],
+			['text' => ['en' => 'cancel', 'hu' => 'mégse']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'back'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'back'
 			],
-            ['text' => ['en' => 'back', 'hu' => 'vissza']],
+			['text' => ['en' => 'back', 'hu' => 'vissza']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'next'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'next'
 			],
-            ['text' => ['en' => 'next', 'hu' => 'következő']],
+			['text' => ['en' => 'next', 'hu' => 'következő']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'previous'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'previous'
 			],
-            ['text' => ['en' => 'previous', 'hu' => 'előző']],
+			['text' => ['en' => 'previous', 'hu' => 'előző']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'add_new'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'add_new'
 			],
-            ['text' => ['en' => 'add new', 'hu' => 'új érték hozzáadása']],
+			['text' => ['en' => 'add new', 'hu' => 'új érték hozzáadása']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'create'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'create'
 			],
-            ['text' => ['en' => 'create new', 'hu' => 'új létrehozása']],
+			['text' => ['en' => 'create new', 'hu' => 'új létrehozása']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'delete'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'delete'
 			],
-            ['text' => ['en' => 'delete', 'hu' => 'törlés']],
+			['text' => ['en' => 'delete', 'hu' => 'törlés']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'edit'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'edit'
 			],
-            ['text' => ['en' => 'edit', 'hu' => 'szerkesztés']],
+			['text' => ['en' => 'edit', 'hu' => 'szerkesztés']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'view'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'view'
 			],
-            ['text' => ['en' => 'view', 'hu' => 'megtekintés']],
+			['text' => ['en' => 'view', 'hu' => 'megtekintés']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'list'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'list'
 			],
-            ['text' => ['en' => 'list', 'hu' => 'listázás']],
+			['text' => ['en' => 'list', 'hu' => 'listázás']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'logout'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'logout'
 			],
-            ['text' => ['en' => 'logout', 'hu' => 'kijelentkezés']],
+			['text' => ['en' => 'logout', 'hu' => 'kijelentkezés']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'action',
-	            'key' => 'login'
+		Translation::updateOrCreate(
+			[
+				'group' => 'action',
+				'key' => 'login'
 			],
-            ['text' => ['en' => 'login', 'hu' => 'bejelentkezés']],
-        );
-        Translation::updateOrCreate([
+			['text' => ['en' => 'login', 'hu' => 'bejelentkezés']],
+		);
+		Translation::updateOrCreate(
+			[
 				'group' => 'action',
 				'key' => 'register'
 			],
 			['text' => ['en' => 'register', 'hu' => 'regisztráció']],
 		);
-        Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'action',
 				'key' => 'submit'
 			],
 			['text' => ['en' => 'submit', 'hu' => 'elküldés']],
 		);
-        Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'action',
 				'key' => 'add_attribute'
 			],
 			['text' => ['en' => 'add attribute', 'hu' => 'új tulajdonság']],
 		);
-        Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'action',
 				'key' => 'save_attributes'
 			],
 			['text' => ['en' => 'save attributes', 'hu' => 'tulajdonságok mentése']],
 		);
-        Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'action',
 				'key' => 'ignore'
 			],
 			['text' => ['en' => 'ignore', 'hu' => 'mellőzés']],
 		);
-        Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'action',
 				'key' => 'import_file'
 			],
 			['text' => ['en' => 'import file', 'hu' => 'fájl betöltése']],
 		);
-        Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'action',
 				'key' => 'parse_file'
 			],
 			['text' => ['en' => 'parse file', 'hu' => 'fájl beolvasása']],
 		);
-    }
+	}
 
-    protected function errorTranslations() {
-        Translation::updateOrCreate([
-	            'group' => 'error',
-	            'key' => 'error'
+	protected function errorTranslations()
+	{
+		Translation::updateOrCreate(
+			[
+				'group' => 'error',
+				'key' => 'error'
 			],
-            ['text' => ['en' => 'error', 'hu' => 'hiba']],
+			['text' => ['en' => 'error', 'hu' => 'hiba']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'error',
-	            'key' => 'module_disabled'
+		Translation::updateOrCreate(
+			[
+				'group' => 'error',
+				'key' => 'module_disabled'
 			],
-            ['text' => ['en' => 'module is disabled', 'hu' => 'modul nincs aktiválva']],
+			['text' => ['en' => 'module is disabled', 'hu' => 'modul nincs aktiválva']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'error',
-	            'key' => 'unauthorized'
+		Translation::updateOrCreate(
+			[
+				'group' => 'error',
+				'key' => 'unauthorized'
 			],
-            ['text' => ['en' => 'unauthorized action', 'hu' => 'jogosulatlan művelet']],
+			['text' => ['en' => 'unauthorized action', 'hu' => 'jogosulatlan művelet']],
 		);
-        Translation::updateOrCreate([
-	            'group' => 'error',
-	            'key' => 'no_matching_credentials_found'
+		Translation::updateOrCreate(
+			[
+				'group' => 'error',
+				'key' => 'no_matching_credentials_found'
 			],
-            ['text' => ['en' => 'no matching credentials found', 'hu' => 'téves bejelentkezési adatok']],
+			['text' => ['en' => 'no matching credentials found', 'hu' => 'téves bejelentkezési adatok']],
 		);
 	}
-	
-	protected function filterTranslations() {
-		Translation::updateOrCreate([
+
+	protected function filterTranslations()
+	{
+		Translation::updateOrCreate(
+			[
 				'group' => 'filter',
 				'key' => 'lt'
 			],
 			['text' => ['en' => 'lesser than', 'hu' => 'kisebb mint']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'filter',
 				'key' => 'gt'
 			],
 			['text' => ['en' => 'greater than', 'hu' => 'nagyobb mint']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'filter',
 				'key' => 'gte'
 			],
 			['text' => ['en' => 'greater than or equal', 'hu' => 'nagyobb mint vagy egyenlő']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'filter',
 				'key' => 'lte'
 			],
 			['text' => ['en' => 'lesser than or equal', 'hu' => 'kisebb mint vagy egyenlő']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'filter',
 				'key' => 'eq'
 			],
 			['text' => ['en' => 'equal', 'hu' => 'egyenlő']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'filter',
 				'key' => 'neq'
 			],
 			['text' => ['en' => 'not equal', 'hu' => 'nem egyenlő']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'filter',
 				'key' => 'like'
 			],
 			['text' => ['en' => 'like', 'hu' => 'hasonló']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'filter',
 				'key' => 'between'
 			],
@@ -690,26 +804,31 @@ class TranslationsTableSeeder extends Seeder
 		);
 	}
 
-	function validationTranslations() {
-		Translation::updateOrCreate([
+	function validationTranslations()
+	{
+		Translation::updateOrCreate(
+			[
 				'group' => 'input',
 				'key' => 'email'
 			],
 			['text' => ['en' => 'email', 'hu' => 'email']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'validation',
 				'key' => 'exists'
 			],
 			['text' => ['en' => 'doesn\'t exists', 'hu' => 'nem létezik']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'validation',
 				'key' => 'uniquie'
 			],
 			['text' => ['en' => 'already exists', 'hu' => 'már létezik']],
 		);
-		Translation::updateOrCreate([
+		Translation::updateOrCreate(
+			[
 				'group' => 'validation',
 				'key' => 'min'
 			],

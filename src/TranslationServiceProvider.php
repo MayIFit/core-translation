@@ -5,7 +5,7 @@ namespace MayIFit\Core\Translation;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
-use MayIFit\Core\Translation\Models\Translation; 
+use MayIFit\Core\Translation\Models\Translation;
 use MayIFit\Core\Translation\Policies\TranslationPolicy;
 use MayIFit\Core\Translation\Observers\TranslationObserver;
 
@@ -14,7 +14,8 @@ use MayIFit\Core\Translation\Observers\TranslationObserver;
  *
  * @package MayIFit\Core\Translation
  */
-class TranslationServiceProvider extends ServiceProvider {
+class TranslationServiceProvider extends ServiceProvider
+{
 
     /**
      * The policy mappings for the application.
@@ -35,9 +36,10 @@ class TranslationServiceProvider extends ServiceProvider {
     /**
      * Bootstrap any application services.
      */
-    public function boot(ConfigRepository $configRepository): void {
-        $this->loadMigrationsFrom(__DIR__.$this->database_folder.'/migrations');
-        $this->mergeConfigFrom(__DIR__.'/core-translation.php', 'core-translation');
+    public function boot(ConfigRepository $configRepository): void
+    {
+        $this->loadMigrationsFrom(__DIR__ . $this->database_folder . '/migrations');
+        $this->mergeConfigFrom(__DIR__ . '/core-translation.php', 'core-translation');
         $this->publishResources($configRepository);
         $this->registerPolicies();
         $this->registerObservers();
@@ -48,21 +50,22 @@ class TranslationServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    protected function publishResources(ConfigRepository $configRepository): void {
+    protected function publishResources(ConfigRepository $configRepository): void
+    {
         $this->publishes([
-            __DIR__.'/core-translation.php' => $this->app->configPath().'/core-translation.php',
+            __DIR__ . '/core-translation.php' => $this->app->configPath() . '/core-translation.php',
         ], 'config');
 
         $this->publishes([
-            __DIR__.'/GraphQL/schema' => $configRepository->get('core-translation.schema.register'),
+            __DIR__ . '/GraphQL/schema' => $configRepository->get('core-translation.schema.register'),
         ], 'schema');
 
         $this->publishes([
-            __DIR__.'/GraphQL/Queries' => $configRepository->get('core-translation.queries.register'),
+            __DIR__ . '/GraphQL/Queries' => $configRepository->get('core-translation.queries.register'),
         ], 'graphql');
-        
+
         $this->publishes([
-            __DIR__.'/GraphQL/Scalars' => $configRepository->get('core-translation.scalars.register'),
+            __DIR__ . '/GraphQL/Scalars' => $configRepository->get('core-translation.scalars.register'),
         ], 'graphql');
     }
 
@@ -71,7 +74,8 @@ class TranslationServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    private function registerObservers(): void {
+    private function registerObservers(): void
+    {
         Translation::observe(TranslationObserver::class);
     }
 }

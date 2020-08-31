@@ -14,12 +14,13 @@ use Illuminate\Support\Collection;
  */
 class AllLanguage
 {
-     /**
+    /**
      * Return all languages available in the System
-     * 
+     *
      * @return Collection
      */
-    public function __invoke($rootValue,array $args, GraphQLContext $context, ResolveInfo $resolveInfo): Collection {
+    public function __invoke($rootValue, array $args, GraphQLContext $context, ResolveInfo $resolveInfo): Collection
+    {
         $languages = DB::table('languages')->get();
         return $languages ?? [];
     }

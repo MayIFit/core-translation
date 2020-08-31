@@ -16,8 +16,9 @@ class Translation extends LanguageLine
     use HasUsers;
 
     protected $table = "language_lines";
-    
-    protected function asJson($value) {
+
+    protected function asJson($value)
+    {
         return json_encode($value, JSON_UNESCAPED_UNICODE);
     }
 }

@@ -12,7 +12,8 @@ class TranslationObserver
      * @param  \MayIFit\Extension\Shop\Models\Translation  $model
      * @return void
      */
-    public function creating(Translation $model) {
+    public function creating(Translation $model)
+    {
         $model->createdBy()->associate(auth()->id());
         $model->updatedBy()->associate(auth()->id());
     }
@@ -23,8 +24,9 @@ class TranslationObserver
      * @param  \MayIFit\Extension\Shop\Models\Translation  $model
      * @return void
      */
-    public function created(Translation $model) {
-        // 
+    public function created(Translation $model)
+    {
+        //
     }
 
     /**
@@ -33,7 +35,8 @@ class TranslationObserver
      * @param  \MayIFit\Extension\Shop\Models\Translation  $model
      * @return void
      */
-    public function saving(Translation $model): void {
+    public function saving(Translation $model): void
+    {
         //
     }
 
@@ -43,8 +46,9 @@ class TranslationObserver
      * @param  \MayIFit\Extension\Shop\Models\Translation  $model
      * @return void
      */
-    public function saved(Translation $model): void {
-        // 
+    public function saved(Translation $model): void
+    {
+        //
     }
 
     /**
@@ -53,8 +57,9 @@ class TranslationObserver
      * @param  \MayIFit\Extension\Shop\Models\Translation  $model
      * @return mixed
      */
-    public function updating(Translation $model) {
-        // 
+    public function updating(Translation $model)
+    {
+        //
     }
 
     /**
@@ -63,8 +68,9 @@ class TranslationObserver
      * @param  \MayIFit\Extension\Shop\Models\Translation  $model
      * @return void
      */
-    public function updated(Translation $model): void {
-        // 
+    public function updated(Translation $model): void
+    {
+        //
     }
 
     /**
@@ -73,8 +79,9 @@ class TranslationObserver
      * @param  \MayIFit\Extension\Shop\Models\Translation  $model
      * @return mixed
      */
-    public function deleting(Translation $model) {
-    //    
+    public function deleting(Translation $model)
+    {
+        //
     }
 
     /**
@@ -83,7 +90,8 @@ class TranslationObserver
      * @param  \MayIFit\Extension\Shop\Models\Translation  $model
      * @return void
      */
-    public function deleted(Translation $model): void {
+    public function deleted(Translation $model): void
+    {
         //
     }
 
@@ -93,7 +101,8 @@ class TranslationObserver
      * @param  \MayIFit\Extension\Shop\Models\Translation  $model
      * @return void
      */
-    public function forceDeleted(Translation $model): void {
+    public function forceDeleted(Translation $model): void
+    {
         //
     }
 }
