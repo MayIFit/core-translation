@@ -4,7 +4,7 @@ namespace MayIFit\Core\Translation\Models;
 
 use Spatie\TranslationLoader\LanguageLine;
 
-use MayIFit\Core\Permission\Traits\HasUsers;
+use MayIFit\Core\Permission\Traits\HasCreators;
 
 /**
  * Class Translation
@@ -13,7 +13,7 @@ use MayIFit\Core\Permission\Traits\HasUsers;
  */
 class Translation extends LanguageLine
 {
-    use HasUsers;
+    use HasCreators;
 
     protected $table = "language_lines";
 

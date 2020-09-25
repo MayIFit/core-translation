@@ -47,30 +47,46 @@ class TestCase extends \Orchestra\Testbench\TestCase
     {
         $this->artisan('vendor:publish', [
             '--provider' => 'Nuwave\\Lighthouse\\LighthouseServiceProvider',
-            '--tag' => 'schema'
+            '--force' => true
         ])->execute();
 
         $this->artisan('vendor:publish', [
-            '--provider' => 'Nuwave\\Lighthouse\\LighthouseServiceProvider',
-            '--tag' => 'config'
+            '--provider' => 'MayIFit\\Core\\Translation\\TranslationServiceProvider',
+            '--tag' => 'schema',
+            '--force' => true
         ])->execute();
 
         $this->artisan('vendor:publish', [
             '--provider' => 'MayIFit\\Core\\Permission\\PermissionServiceProvider',
-            '--force' => 'true'
+            '--tag' => 'schema',
+            '--force' => true,
         ])->run();
 
-        $this->artisan('vendor:publish', [
-            '--provider' => 'MayIFit\\Core\\Translation\\TranslationServiceProvider',
-            '--tag' => 'config',
-            '--force' => true
-        ])->execute();
 
         file_put_contents(
             $this->app['config']->get('lighthouse.schema.register'),
             '
 #import core/*.graphql
 #import extensions/*.graphql
+
+type User {
+    id: ID!
+    name: String
+    email: String!
+}
+
+input CreateUserInput {
+    name: String!
+    email: String!
+    password: String! @hash
+}
+
+input UpdateUserInput {
+    id: ID!
+    name: String
+    email: String
+    password: String @hash
+}
 
 type Query
 

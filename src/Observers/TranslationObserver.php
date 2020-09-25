@@ -2,6 +2,8 @@
 
 namespace MayIFit\Core\Translation\Observers;
 
+use Illuminate\Support\Facades\Auth;
+
 use MayIFit\Core\Translation\Models\Translation;
 
 class TranslationObserver
@@ -14,8 +16,7 @@ class TranslationObserver
      */
     public function creating(Translation $model)
     {
-        $model->createdBy()->associate(auth()->id());
-        $model->updatedBy()->associate(auth()->id());
+        $model->createdBy()->associate(Auth::user());
     }
 
     /**
@@ -59,7 +60,7 @@ class TranslationObserver
      */
     public function updating(Translation $model)
     {
-        //
+        $model->updatedBy()->associate(Auth::user());
     }
 
     /**

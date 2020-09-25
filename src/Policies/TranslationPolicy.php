@@ -5,7 +5,6 @@ namespace MayIFit\Core\Translation\Policies;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 use MayIFit\Core\Translation\Models\Translation;
-use App\Models\User;
 
 /**
  * Class TranslationPolicy
@@ -17,85 +16,83 @@ class TranslationPolicy
     use HandlesAuthorization;
 
     /**
-     * Determine whether the user can view any translations.
+     * Determine whether the can view any translations.
      *
-     * @param  \App\Models\User  $user
+     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $user
      * @return mixed
      */
-    public function viewAny(User $user)
+    public function viewAny($model)
     {
         return true;
     }
 
     /**
-     * Determine whether the user can view the translation.
+     * Determine whether the can view the translation.
      *
-     * @param  \App\Models\User  $user
+     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $user
      * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return mixed
      */
-    public function view(User $user, Translation $translation)
+    public function view($model, Translation $translation)
     {
         return true;
     }
 
     /**
-     * Determine whether the user can create translations.
+     * Determine whether the can create translations.
      *
-     * @param  \App\Models\User  $user
+     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $user
      * @return mixed
      */
-    public function create(User $user)
+    public function create($model)
     {
-        return $user->tokenCan('translation.create');
+        return $model->hasPermission('translation.create');
     }
 
     /**
-     * Determine whether the user can update the translation.
+     * Determine whether the can update the translation.
      *
-     * @param  \App\Models\User  $user
+     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $user
      * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return mixed
      */
-    public function update(User $user, Translation $translation)
+    public function update($model, Translation $translation)
     {
-        return $user->tokenCan('translation.update');
-
+        return $model->hasPermission('translation.update');
     }
 
     /**
-     * Determine whether the user can delete the translation.
+     * Determine whether the can delete the translation.
      *
-     * @param  \App\Models\User  $user
+     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $user
      * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return mixed
      */
-    public function delete(User $user, Translation $translation)
+    public function delete($model, Translation $translation)
     {
-        return $user->tokenCan('translation.delete');
-
+        return $model->hasPermission('translation.delete');
     }
 
     /**
-     * Determine whether the user can restore the translation.
+     * Determine whether the can restore the translation.
      *
-     * @param  \App\Models\User  $user
+     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $user
      * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return mixed
      */
-    public function restore(User $user, Translation $translation)
+    public function restore($model, Translation $translation)
     {
         return false;
     }
 
     /**
-     * Determine whether the user can permanently delete the translation.
+     * Determine whether the can permanently delete the translation.
      *
-     * @param  \App\Models\User  $user
+     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $user
      * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return mixed
      */
-    public function forceDelete(User $user, Translation $translation)
+    public function forceDelete($model, Translation $translation)
     {
         return false;
     }

@@ -19,8 +19,8 @@ class CreateTranslationsTable extends Migration
             $table->index('group');
             $table->string('key');
             $table->text('text');
-            $table->foreignId('created_by')->nullable()->references('id')->on('users');
-            $table->foreignId('updated_by')->nullable()->references('id')->on('users');
+            $table->nullableMorphs('created_by');
+            $table->nullableMorphs('updated_by');
             $table->timestamps();
             $table->unique(['group', 'key'], 'composite_index');
         });
