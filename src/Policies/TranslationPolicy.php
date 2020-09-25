@@ -18,10 +18,10 @@ class TranslationPolicy
     /**
      * Determine whether the can view any translations.
      *
-     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $user
+     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $authModel
      * @return mixed
      */
-    public function viewAny($model)
+    public function viewAny($authModel)
     {
         return true;
     }
@@ -29,11 +29,11 @@ class TranslationPolicy
     /**
      * Determine whether the can view the translation.
      *
-     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $user
+     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $authModel
      * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return mixed
      */
-    public function view($model, Translation $translation)
+    public function view($authModel, Translation $translation)
     {
         return true;
     }
@@ -41,46 +41,46 @@ class TranslationPolicy
     /**
      * Determine whether the can create translations.
      *
-     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $user
+     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $authModel
      * @return mixed
      */
-    public function create($model)
+    public function create($authModel)
     {
-        return $model->hasPermission('translation.create');
+        return $authModel->hasPermission('translation.create');
     }
 
     /**
      * Determine whether the can update the translation.
      *
-     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $user
+     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $authModel
      * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return mixed
      */
-    public function update($model, Translation $translation)
+    public function update($authModel, Translation $translation)
     {
-        return $model->hasPermission('translation.update');
+        return $authModel->hasPermission('translation.update');
     }
 
     /**
      * Determine whether the can delete the translation.
      *
-     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $user
+     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $authModel
      * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return mixed
      */
-    public function delete($model, Translation $translation)
+    public function delete($authModel, Translation $translation)
     {
-        return $model->hasPermission('translation.delete');
+        return $authModel->hasPermission('translation.delete');
     }
 
     /**
      * Determine whether the can restore the translation.
      *
-     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $user
+     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $authModel
      * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return mixed
      */
-    public function restore($model, Translation $translation)
+    public function restore($authModel, Translation $translation)
     {
         return false;
     }
@@ -88,11 +88,11 @@ class TranslationPolicy
     /**
      * Determine whether the can permanently delete the translation.
      *
-     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $user
+     * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $authModel
      * @param  \MayIFit\Core\Translation\Models\Translation  $translation
      * @return mixed
      */
-    public function forceDelete($model, Translation $translation)
+    public function forceDelete($authModel, Translation $translation)
     {
         return false;
     }
