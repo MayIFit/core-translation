@@ -1,68 +1,80 @@
 "A JSON like data structure like `{en: User, hu: Felhasználó}`"
-scalar ObjectScalar @scalar(class: "MayIFit\\Core\\Translation\\GraphQL\\Scalars\\ObjectScalar")
+scalar ObjectScalar
+  @scalar(class: "MayIFit\\Core\\Translation\\GraphQL\\Scalars\\ObjectScalar")
 
 extend type Query {
-    allTranslation: [Translation!]! @all
-    allLanguage: [Language!]! @cache
-        @field(resolver: "MayIFit\\Core\\Translation\\GraphQL\\Queries\\AllLanguage")
+  allTranslation: [Translation!]! @all
+  allLanguage: [Language!]!
+    @cache
+    @field(
+      resolver: "MayIFit\\Core\\Translation\\GraphQL\\Queries\\AllLanguage"
+    )
 }
 
 extend type Query @guard(with: ["sanctum"]) {
-    listTranslation(
-        filter: _ @whereConditions(columnsEnum: "TranslationWhereColumn")
-    ): [Translation!]! 
-    @can(ability: "viewAny" model: "MayIFit\\Core\\Translation\\Models\\Translation") 
+  listTranslation(
+    filter: _ @whereConditions(columnsEnum: "TranslationWhereColumn")
+  ): [Translation!]!
+    @can(
+      ability: "viewAny"
+      model: "MayIFit\\Core\\Translation\\Models\\Translation"
+    )
     @paginate(type: "paginator")
 
-    viewTranslation(
-        id: ID! @eq
-    ): Translation! @can(ability: "view" find: "id") @find
+  viewTranslation(id: ID! @eq): Translation!
+    @can(ability: "view", find: "id")
+    @find
 }
 
 extend type Mutation @guard(with: ["sanctum"]) {
-    updateTranslation(input: UpdateTranslationInput! @spread): Translation 
-        @can(ability: "update" find: "id") 
-        @update
+  updateTranslation(input: UpdateTranslationInput! @spread): Translation
+    @can(ability: "update", find: "id")
+    @update
 
-    createTranslation(input: CreateTranslationInput! @spread): Translation 
-        @can(ability: "create" model: "MayIFit\\Core\\Translation\\Models\\Translation") 
-        @create
+  createTranslation(input: CreateTranslationInput! @spread): Translation
+    @can(
+      ability: "create"
+      model: "MayIFit\\Core\\Translation\\Models\\Translation"
+    )
+    @create
 
-    deleteTranslation(id: ID! @rules(apply: ["required"])): Translation 
-        @can(ability: "delete" find: "id") 
-        @delete
+  deleteTranslation(id: ID! @rules(apply: ["required"])): Translation
+    @can(ability: "delete", find: "id")
+    @delete
 }
 
 input UpdateTranslationInput {
-    id: ID!
-    group: String!
-    key: String!
-    text: ObjectScalar
+  id: ID!
+  group: String!
+  key: String!
+  text: ObjectScalar
 }
 
 input CreateTranslationInput {
-    group: String!
-    key: String!
-    text: ObjectScalar
+  group: String!
+  key: String!
+  text: ObjectScalar
 }
 
+"A language defined in the ISO 639-1 format"
 type Language {
-    id: ID!
-    "ISO 639-1"
-    language: String! @rename(attribute: "ISO6391")
-    name: String
+  id: ID!
+  "ISO 639-1"
+  language: String! @rename(attribute: "ISO6391")
+  name: String
 }
 
-type Translation @modelClass(class: "MayIFit\\Core\\Translation\\Models\\Translation") {
-    id: ID!
-    key: String!
-    group: String!
-    text: ObjectScalar
+type Translation
+  @modelClass(class: "MayIFit\\Core\\Translation\\Models\\Translation") {
+  id: ID!
+  key: String!
+  group: String!
+  text: ObjectScalar
 }
 
 "A list of filterable columns."
 enum TranslationWhereColumn {
-    KEY @enum(value: "key")
-    GROUP @enum(value: "group")
-    TEXT @enum(value: "text")
+  KEY @enum(value: "key")
+  GROUP @enum(value: "group")
+  TEXT @enum(value: "text")
 }
