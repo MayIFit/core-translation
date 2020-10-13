@@ -33,6 +33,6 @@ class CreateTranslationsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('language_lines');
+        Schema::dropIfExists('language_lines');
     }
 }
